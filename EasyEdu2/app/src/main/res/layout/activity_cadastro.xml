@@ -12,7 +12,7 @@
 
     <TextView
             android:text="Email"
-            android:textSize="30dp"
+            android:textSize="24dp"
             android:textColor="@color/white"
             android:layout_width="105dp"
             android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
             android:id="@+id/editText"/>
     <TextView
             android:text="Senha"
-            android:textSize="30dp"
+            android:textSize="24dp"
             android:textColor="@color/colorAccent"
             android:layout_width="105dp"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             android:id="@+id/editText200"/>
     <TextView
             android:text="Confirmar Senha"
-            android:textSize="30dp"
+            android:textSize="24dp"
             android:textColor="@color/colorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,12 +64,13 @@
             android:layout_marginVertical="30dp"
             android:id="@+id/btn_login"/>
     <Button
+            android:id="@+id/btn_back"
             android:text="Voltar"
             android:textColor="@color/colorPrimary"
             android:layout_width="105dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="70dp"
-            android:id="@+id/textView2"/>
+            />
 
 
 </LinearLayout>
