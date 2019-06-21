@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:background="@drawable/background"
+              tools:context="com.example.easyedu.QRCodeGenerator">
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="80dp"
+            android:id="@+id/iv"/>
+
+    <EditText
+            android:layout_width="343dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/etqr"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:hint="Digite um código"/>
+
+    <Button
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn"
+            android:background="@drawable/buttongradient"
+            android:text="Gerar QR Code"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"/>
+
+
+
+</LinearLayout>
