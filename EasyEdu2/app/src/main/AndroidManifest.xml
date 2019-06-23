@@ -33,6 +33,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".CadastroActivity"/>
+        <activity
+                android:name=".UserProfileActivity"
+                android:label="Profile"
+                >
+        </activity>
     </application>
 
 </manifest>
