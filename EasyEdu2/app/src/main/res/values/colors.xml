@@ -6,4 +6,6 @@
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="fosco">#00FA9A</color>
+    <color name="colorSecondaryText">#9cad01</color>
+    <color name="colorPrimaryText">#e81227</color>
 </resources>
