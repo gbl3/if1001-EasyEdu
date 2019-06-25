@@ -23,5 +23,10 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
+        btn_perfil.setOnClickListener(){
+            val intent = Intent(this,UserProfileActivity::class.java)
+
+            startActivity(intent)
+        }
     }
 }
