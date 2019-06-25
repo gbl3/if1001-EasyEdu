@@ -24,7 +24,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btn_perfil.setOnClickListener(){
+<<<<<<< HEAD
             val intent = Intent(this, UserProfileActivity::class.java)
+=======
+            val intent = Intent(this,UserProfileActivity::class.java)
+>>>>>>> 00115c4abec03f74ebc0278626c9da02a4a09e36
 
             startActivity(intent)
         }

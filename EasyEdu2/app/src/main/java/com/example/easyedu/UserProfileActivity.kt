@@ -33,11 +33,19 @@ class UserProfileActivity : AppCompatActivity() {
         Glide.with(this).load(if (profileId == 1) R.drawable.face_1 else R.drawable.face_2).apply(requestOptions)
             .into(mainLayout.profilePic)
 
+<<<<<<< HEAD
         mainLayout.profileName.text = if (profileId == 1) "Pirraia Silva" else "Professor Santos"
 
         mainLayout.profileDsgn.text = if (profileId == 1) "Student" else "Teacher"
         mainLayout.profileEmail.text = if (profileId == 1) "janedoe@helloworld.com" else "jhondoe@helloworld.com"
         mainLayout.profileFullName.text = if (profileId == 1) "Pirraia Silva" else "Professor Santos"
+=======
+        mainLayout.profileName.text = if (profileId === 1) "Boy" else "Prof"
+
+        mainLayout.profileDsgn.text = if (profileId === 1) "Student" else "Teacher"
+        mainLayout.profileEmail.text = if (profileId === 1) "boy@helloworld.com" else "prof@helloworld.com"
+        mainLayout.profileFullName.text = if (profileId === 1) "Boy" else "Prof"
+>>>>>>> 00115c4abec03f74ebc0278626c9da02a4a09e36
 
     }
 
@@ -52,6 +60,9 @@ class UserProfileActivity : AppCompatActivity() {
     fun getJaneOrJohn(): Int {
         return (1..2).shuffled().first()
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 00115c4abec03f74ebc0278626c9da02a4a09e36
 }
