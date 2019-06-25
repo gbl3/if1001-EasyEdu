@@ -29,5 +29,13 @@
             android:text="Gerar QR Code"
     />
 
+    <Button android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_perfil"
+            android:background="@drawable/buttongradient"
+            android:textColor="@color/white"
+            android:text="perfil"
+    />
+
 
 </LinearLayout>
