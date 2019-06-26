@@ -8,7 +8,7 @@
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
+            android:label="EasyEdu"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
@@ -33,10 +33,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".CadastroActivity"/>
-        <activity
-                android:name=".UserProfileActivity"
-                android:label="Profile"
-                >
+        <!--<activity-->
+                <!--android:name=".UserProfileActivity"-->
+                <!--android:label="Profile"-->
+                <!--&gt;-->
+        <!--</activity>-->
+        <activity android:name="br.ufpe.cin.android.room.AdicionarEstadoActivity">
+        </activity>
+        <activity android:name="br.ufpe.cin.android.room.MainActivity2">
+
         </activity>
     </application>
 
