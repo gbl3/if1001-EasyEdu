@@ -46,7 +46,7 @@ class UserProfileActivity : AppCompatActivity() {
     }
 
     private fun startAnimation(mainLayout: View) {
-        mainLayout.profileFrame.setBackgroundResource(R.drawable.profile)
+        mainLayout.profileFrame.setBackgroundResource(R.drawable.profileanimbg)
         val animationDrawable = mainLayout.profileFrame.background as AnimationDrawable
         animationDrawable.setEnterFadeDuration(3000)
         animationDrawable.setExitFadeDuration(3000)
