@@ -29,5 +29,18 @@
             android:text="Gerar QR Code"
     />
 
+    <Button android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_banco"
+            android:text="banco"
+            android:background="@drawable/buttongradient"
+            android:textColor="@color/white"/>
+<!--<<<<<<< HEAD-->
+            <!--android:text="perfil"-->
+<!--=======-->
+            <!--android:text="Perfil"-->
+<!--&gt;>>>>>> 00115c4abec03f74ebc0278626c9da02a4a09e36-->
+    <!--/>-->
+
 
 </LinearLayout>
