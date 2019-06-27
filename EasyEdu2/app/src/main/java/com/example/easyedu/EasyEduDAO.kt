@@ -14,7 +14,7 @@ interface EasyEduDAO {
     fun removerTurmas(vararg turma: Turma)
 
     @Query("SELECT * FROM turmas")
-    fun todasTurmas() : ArrayList<Turma>
+    fun todasTurmas() : Array<Turma>
 
     @Query("SELECT * FROM turmas WHERE nome LIKE :q")
     fun buscaTurmaPeloNome(q : String) : List<Turma>

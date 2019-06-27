@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_height="100sp"
+              android:layout_width="match_parent"
+              android:orientation="vertical">
+    <TextView
+            android:id="@+id/turma_item_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:text="ID da Turma"/>
+    <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/turma_item_nome"
+            android:textSize="30sp"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:text="Nome da Turma"
+            xmlns:android="http://schemas.android.com/apk/res/android"/>
+</LinearLayout>
+

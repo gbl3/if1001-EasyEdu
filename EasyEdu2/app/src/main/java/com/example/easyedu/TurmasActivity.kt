@@ -3,6 +3,7 @@ package com.example.easyedu
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_turmas.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -18,16 +19,6 @@ class TurmasActivity : AppCompatActivity() {
             val intent = Intent(this, AdicionarTurmaActivity::class.java)
             startActivity(intent)
         }
-
-//        val qtdTurmas = 20
-//
-//        for (i in 1..qtdTurmas) {
-//            val turma = Button(this)
-//
-//            turma_screen.addView(turma)
-//        }
-
-
     }
 
     override fun onResume() {
@@ -36,13 +27,11 @@ class TurmasActivity : AppCompatActivity() {
         doAsync {
             val turmas = db.easyEduDAO().todasTurmas()
             uiThread {
-                val adapter = AdapterTurmas(turmas)
-//                val adapter = ArrayAdapter<Turma> (
-//                    applicationContext,
-//                    R.layout.turma,
-//                    turmas
-//                )
-                listaTurmas.adapter = adapter
+                val recyclerView = listaTurmasRecyclerView
+                recyclerView.adapter = AdapterTurmas(turmas, this@TurmasActivity.applicationContext)
+
+                val layoutManager = LinearLayoutManager(this@TurmasActivity.applicationContext)
+                recyclerView.layoutManager = layoutManager
             }
         }
 

@@ -1,32 +1,35 @@
 package com.example.easyedu
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Adapter
+import kotlinx.android.synthetic.main.turma_item.view.*
 
-class AdapterTurmas(private val listTurmas: ArrayList<Turma>) : RecyclerView.Adapter<AdapterTurmas.MyViewHolder>() {
+class AdapterTurmas(private val listaDeTurmas: Array<Turma>,
+                    private val context: Context) : Adapter<AdapterTurmas.ViewHolder>() {
 
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterTurmas.MyViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.activity_settings_child, parent, false)
-        return MyViewHolder(v)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val turma = listaDeTurmas[position]
+        holder?.let {
+            it.idTurma.text = turma.id
+            it.nomeTurma.text = turma.nome
+        }
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-//        holder.textViewName.text = seriesList[position].name
-//        holder.textViewNameDesc.text = seriesList[position].desc
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(context).inflate(R.layout.turma_item, parent, false)
+        return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return listTurmas.size
+        return listaDeTurmas.size
     }
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textViewName = itemView.findViewById(R.id.name) as TextView
-        val textViewNameDesc = itemView.findViewById(R.id.desc) as TextView
-
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val idTurma = itemView.turma_item_id
+        val nomeTurma = itemView.turma_item_nome
     }
 }
