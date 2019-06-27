@@ -24,13 +24,18 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
-        btn_banco.setOnClickListener(){
+        btn_posts.setOnClickListener(){
 
-            val intent = Intent(this,MainActivity2::class.java)//<<<<<<< HEAD
+            val intent = Intent(this,PostsActivity::class.java)//<<<<<<< HEAD
 //            val intent = Intent(this, UserProfileActivity::class.java)
 //=======
 //            val intent = Intent(this,UserProfileActivity::class.java)
 //>>>>>>> 00115c4abec03f74ebc0278626c9da02a4a09e36
+
+            startActivity(intent)
+        }
+        btn_turmas.setOnClickListener(){
+            val intent = Intent(this,TurmasActivity::class.java)
 
             startActivity(intent)
         }

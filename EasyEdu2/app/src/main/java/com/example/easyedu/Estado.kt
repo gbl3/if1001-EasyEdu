@@ -5,8 +5,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "estados")
 data class Estado(
-    @PrimaryKey var uf: String,
+    @PrimaryKey (autoGenerate = true) var uf: Long,
     var nome: String
+//    var id :
 ) {
     override fun toString(): String {
         return nome

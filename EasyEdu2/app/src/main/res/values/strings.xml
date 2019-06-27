@@ -11,6 +11,8 @@
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_turmas">Turmas</string>
     <string name="btnAddTurma">Adicionar Turma</string>
+    <string name="title_activity_posts">Posts</string>
+    <string name="btnAddPost">Fazer Comentário</string>
     <string name="exemplo_turma1">Turma 1</string>
     <string name="exemplo_turma2">Turma 2</string>
     <string name="exemplo_turma3">Turma 3</string>

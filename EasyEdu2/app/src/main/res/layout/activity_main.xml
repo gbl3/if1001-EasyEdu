@@ -31,8 +31,16 @@
 
     <Button android:layout_width="162dp"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_banco"
-            android:text="banco"
+            android:id="@+id/btn_posts"
+            android:text="Posts"
+            android:layout_marginVertical="30dp"
+            android:background="@drawable/buttongradient"
+            android:textColor="@color/white"/>
+
+    <Button android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_turmas"
+            android:text="Criar Turmas"
             android:background="@drawable/buttongradient"
             android:textColor="@color/white"/>
 <!--<<<<<<< HEAD-->
