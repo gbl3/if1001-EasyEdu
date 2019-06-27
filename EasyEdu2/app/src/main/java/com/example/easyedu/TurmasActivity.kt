@@ -2,7 +2,6 @@ package com.example.easyedu
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_turmas.*
 import org.jetbrains.anko.doAsync
@@ -37,12 +36,13 @@ class TurmasActivity : AppCompatActivity() {
         doAsync {
             val turmas = db.easyEduDAO().todasTurmas()
             uiThread {
-                val adapter = ArrayAdapter<Turma> (
-                    applicationContext,
-                    R.layout.turma,
-                    turmas
-                )
-                listaTurmas.setAdapter(adapter)
+                val adapter = AdapterTurmas(turmas)
+//                val adapter = ArrayAdapter<Turma> (
+//                    applicationContext,
+//                    R.layout.turma,
+//                    turmas
+//                )
+                listaTurmas.adapter = adapter
             }
         }
 

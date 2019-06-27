@@ -10,9 +10,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btnAddTurma"/>
-
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listaTurmas"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></ListView>
+            android:layout_height="match_parent"/>
+
+    <!--<ListView-->
+            <!--android:id="@+id/listaTurmas"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"></ListView>-->
+
 </LinearLayout>
