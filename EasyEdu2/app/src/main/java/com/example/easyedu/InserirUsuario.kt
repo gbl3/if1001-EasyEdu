@@ -1,8 +1,6 @@
 package com.example.easyedu
 
 import android.content.Intent
-import android.content.Context
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -12,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_turmas.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
-class CadastroActivity : AppCompatActivity() {
+class InserirUsuario : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
@@ -41,21 +39,7 @@ class CadastroActivity : AppCompatActivity() {
 
             }
             Toast.makeText(this, "Cadastro efetuado com sucesso!", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this,LoginActivity::class.java)
 
-            startActivity(intent)
-//            val db = UsuariosDB.getDatabase(this)
-//            doAsync {
-//                val usuarios = db.usuariosDAO().todosUsuarios()
-//                uiThread {
-//                    val adapter = ArrayAdapter<Usuario> (
-//                        applicationContext,
-//                        R.layout.turma,
-//                        usuarios
-//                    )
-//                    listaTurmas.setAdapter(adapter)
-//                }
-//            }
         }
     }
 

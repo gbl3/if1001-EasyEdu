@@ -10,6 +10,7 @@
         android:background="@mipmap/ic_launcher"
         tools:context=".MainActivity">
 
+
     <TextView
             android:text="Email"
             android:textSize="24dp"
@@ -23,7 +24,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="15"
-            android:id="@+id/editText"/>
+            android:id="@+id/EmailInput"/>
     <TextView
             android:text="Senha"
             android:textSize="24dp"
@@ -31,7 +32,7 @@
             android:layout_width="105dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="70dp"
-            android:id="@+id/textView21"/>
+            android:id="@+id/SenhaInput"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginVertical="30dp"
-            android:id="@+id/btn_login"/>
+            android:id="@+id/btn_cadastro"/>
     <Button
             android:id="@+id/btn_back"
             android:text="Voltar"
@@ -71,6 +72,26 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="70dp"
             />
+    <TextView
+            android:text="Perfil"
+            android:textSize="24dp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="70dp"
+            />
+    <CheckBox
+            android:text="Aluno"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="70dp"
+            android:layout_height="wrap_content" android:id="@+id/btnAluno"/>
+    <CheckBox
+            android:text="Professor"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="70dp"
+
+            android:layout_height="wrap_content" android:id="@+id/btnProfessor"/>
+
 
 
 </LinearLayout>
