@@ -1,6 +1,8 @@
 package com.example.easyedu
 
+
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +18,13 @@ class AdapterTurmas(private val listaDeTurmas: Array<Turma>,
         holder?.let {
             it.idTurma.text = turma.id
             it.nomeTurma.text = turma.nome
+        }
+
+        holder.nomeTurma.setOnClickListener{
+            val intent = Intent(context, ExibeTurmaActivity::class.java)
+            intent.putExtra("idTurma", turma.id)
+            intent.putExtra("nomeTurma", turma.nome)
+            context.startActivity(intent)
         }
     }
 
