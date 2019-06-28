@@ -28,7 +28,10 @@
             android:textColor="@color/white"
             android:text="Gerar QR Code"
     />
-
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/safapedro"
+              android:text="keakea"
+    />
     <Button android:layout_width="162dp"
             android:layout_height="wrap_content"
             android:id="@+id/btn_posts"
@@ -49,6 +52,5 @@
             <!--android:text="Perfil"-->
 <!--&gt;>>>>>> 00115c4abec03f74ebc0278626c9da02a4a09e36-->
     <!--/>-->
-
 
 </LinearLayout>

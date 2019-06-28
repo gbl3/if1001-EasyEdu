@@ -3,9 +3,7 @@ package com.example.easyedu
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
-import br.ufpe.cin.android.room.MainActivity2
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_qrcode_generator.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,19 +11,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btn_login.setOnClickListener(){
+        btn_login.setOnClickListener() {
             val intent = Intent(this, QRCodeScan::class.java)
             // start your next activity
             startActivity(intent)
         }
-        btn_create_qr.setOnClickListener(){
-            val intent = Intent(this,QRCodeGenerator::class.java)
+        btn_create_qr.setOnClickListener() {
+            val intent = Intent(this, QRCodeGenerator::class.java)
 
             startActivity(intent)
         }
-        btn_posts.setOnClickListener(){
+        btn_posts.setOnClickListener() {
 
-            val intent = Intent(this,PostsActivity::class.java)//<<<<<<< HEAD
+            val intent = Intent(this, PostsActivity::class.java)//<<<<<<< HEAD
 //            val intent = Intent(this, UserProfileActivity::class.java)
 //=======
 //            val intent = Intent(this,UserProfileActivity::class.java)
@@ -33,10 +31,13 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
-        btn_turmas.setOnClickListener(){
-            val intent = Intent(this,TurmasActivity::class.java)
+        btn_turmas.setOnClickListener() {
+            val intent = Intent(this, TurmasActivity::class.java)
 
             startActivity(intent)
         }
+
+
     }
 }
+

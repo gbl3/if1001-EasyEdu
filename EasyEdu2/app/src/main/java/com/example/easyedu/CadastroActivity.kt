@@ -1,11 +1,8 @@
 package com.example.easyedu
 
-import android.content.Intent
-import android.content.Context
-import android.view.View
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_cadastro.*
 import kotlinx.android.synthetic.main.activity_turmas.*
@@ -31,31 +28,20 @@ class CadastroActivity : AppCompatActivity() {
             }
 
             val usuario = Usuario(email = userEmail,senha =  userSenha, perfil = userPerfil)
+//            Log.d("pedin", usuario.email)
             doAsync {
                 val db = UsuariosDB.getDatabase(applicationContext)
                 db.usuariosDAO().inserirUsuarios(usuario)
-                uiThread {
-                    finish()
-
-                }
+//                val a = db.usuariosDAO().todosUsuarios()
+//                val b = db.usuariosDAO().todoscOUNT()
+//                Log.d("pedin",b.toString())
+//                for (kea in a){
+//                    Log.d("pedin",kea.email)
+//
+//                }
 
             }
             Toast.makeText(this, "Cadastro efetuado com sucesso!", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this,LoginActivity::class.java)
-
-            startActivity(intent)
-//            val db = UsuariosDB.getDatabase(this)
-//            doAsync {
-//                val usuarios = db.usuariosDAO().todosUsuarios()
-//                uiThread {
-//                    val adapter = ArrayAdapter<Usuario> (
-//                        applicationContext,
-//                        R.layout.turma,
-//                        usuarios
-//                    )
-//                    listaTurmas.setAdapter(adapter)
-//                }
-//            }
         }
     }
 

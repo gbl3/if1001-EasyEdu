@@ -1,14 +1,17 @@
 package com.example.easyedu.users
 
+import android.provider.ContactsContract
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "usuario_atual")
+@Entity(tableName = "usuarioatual")
 data class UsuarioAtual(
-    @PrimaryKey var id: Int
+    @PrimaryKey var id: Int,
+    var email: String,
+    var perfil: Int
 
 ) {
-    fun toInt(): Int {
-        return id
+    override fun toString(): String {
+        return email
     }
 }

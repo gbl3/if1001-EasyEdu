@@ -32,14 +32,14 @@
             android:layout_width="105dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="70dp"
-            android:id="@+id/SenhaInput"/>
+           />
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:layout_marginTop="20dp"
             android:ems="15"
-            android:id="@+id/editText200"/>
+            android:id="@+id/SenhaInput"/>
     <TextView
             android:text="Confirmar Senha"
             android:textSize="24dp"

@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = arrayOf(Usuario::class), version=1)
+@Database(entities = [Usuario::class], version=1)
 abstract class UsuariosDB : RoomDatabase() {
     abstract fun usuariosDAO(): UsuariosDAO
     companion object {
@@ -15,7 +15,7 @@ abstract class UsuariosDB : RoomDatabase() {
                 synchronized(UsuariosDB::class) {
                     INSTANCE = Room.databaseBuilder(
                         context.getApplicationContext(),
-                        UsuariosDB::class.java, "UsuariosDB.db"
+                        UsuariosDB::class.java, "usuariosDB.db"
                     ).build()
                 }
             }
