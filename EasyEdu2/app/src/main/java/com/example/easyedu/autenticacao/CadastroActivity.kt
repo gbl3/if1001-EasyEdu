@@ -9,6 +9,7 @@ import com.example.easyedu.Usuario
 import com.example.easyedu.UsuariosDB
 import kotlinx.android.synthetic.main.activity_cadastro.*
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 
 class CadastroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,23 +19,34 @@ class CadastroActivity : AppCompatActivity() {
         btn_cadastro.setOnClickListener() {
             val userEmail = EmailInput.text.toString()
             val userSenha = SenhaInput.text.toString()
+            val userConf = conf_senha.text.toString()
             var userPerfil = 0
-            if (btnAluno.isChecked){
+            if (btnAluno.isChecked) {
                 userPerfil = 1
                 btnProfessor.isChecked = false
             }
-            if (btnProfessor.isChecked){
+            if (btnProfessor.isChecked) {
                 userPerfil = 2
                 btnAluno.isChecked = false
             }
 
-            val usuario = Usuario(email = userEmail, senha = userSenha, perfil = userPerfil)
+            if (userConf == userSenha) {
+                val usuario = Usuario(email = userEmail, senha = userSenha, perfil = userPerfil)
 //            Log.d("pedin", usuario.email)
-            doAsync {
+                doAsync {
+                    val db = UsuariosDB.getDatabase(applicationContext)
+                    db.usuariosDAO().inserirUsuarios(usuario)
+                    val todos = db.usuariosDAO().todosUsuarios()
+                    for (um in todos) {
+                        if (um.email == userEmail) {
+                            uiThread {
+                                Toast.makeText(this@CadastroActivity, "Usuário já existe!", Toast.LENGTH_SHORT).show()
+                                finish()
+                            }
+                        }
 
-                val db = UsuariosDB.getDatabase(applicationContext)
-                db.usuariosDAO().inserirUsuarios(usuario)
- //               val a = db.usuariosDAO().todosUsuarios()
+                    }
+                    //               val a = db.usuariosDAO().todosUsuarios()
 //                val b = db.usuariosDAO().todoscOUNT()
 //                Log.d("pedin",b.toString())
 //                for (kea in u){
@@ -42,12 +54,15 @@ class CadastroActivity : AppCompatActivity() {
 
 //                }
 
+                }
+                Toast.makeText(this, "Cadastro efetuado com sucesso!", Toast.LENGTH_SHORT).show()
+                finish()
+            }else{
+                Toast.makeText(this, "A confirmação de senha deve ser igual a senha escolhida!", Toast.LENGTH_SHORT).show()
             }
-            Toast.makeText(this, "Cadastro efetuado com sucesso!", Toast.LENGTH_SHORT).show()
-            finish()
-        }
-        btn_back.setOnClickListener(){
-            finish()
+            btn_back.setOnClickListener() {
+                finish()
+            }
         }
     }
 

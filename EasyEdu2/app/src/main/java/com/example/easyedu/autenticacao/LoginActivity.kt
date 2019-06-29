@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.easyedu.*
+import com.example.easyedu.perfil.PerfilActivity
 import com.example.easyedu.posts.PostsActivity
 import com.example.easyedu.users.UsuarioAtual
 import kotlinx.android.synthetic.main.activity_login.*
@@ -31,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
                     uiThread {
                         Toast.makeText(this@LoginActivity, "Login efetuado com sucesso!", Toast.LENGTH_SHORT).show()
                         if (usrAtual.perfil == 2) {
-                            val intent = Intent(this@LoginActivity, PostsActivity::class.java)
+                            val intent = Intent(this@LoginActivity, PerfilActivity::class.java)
                             startActivity(intent)
                         }else{
                             val intent = Intent(this@LoginActivity, MainActivity::class.java)
