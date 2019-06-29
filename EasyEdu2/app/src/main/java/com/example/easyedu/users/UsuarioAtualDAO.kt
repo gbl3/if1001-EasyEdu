@@ -12,4 +12,7 @@ interface UsuarioAtualDAO {
 
     @Query("SELECT * FROM usuarioatual")
     fun saberPerfilLogado() : List<UsuarioAtual>
+
+    @Query("SELECT COUNT(*) FROM usuarioatual")
+    fun saberSeExiste() : Int
 }

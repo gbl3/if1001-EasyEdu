@@ -20,15 +20,16 @@ class HomeActivity : AppCompatActivity() {
             doAsync {
                 val db = UsuarioAtualDB.getDatabase(applicationContext)
                 val perfil = db.usuarioAtualDAO().saberPerfilLogado()
+                val existe = db.usuarioAtualDAO().saberSeExiste()
                 for(p in perfil){
                     Log.d("pedin",p.perfil.toString())
                     if(p.perfil.toString() == "1"){
-                        val intent = Intent(this@HomeActivity, PostsActivity::class.java)
+                        val intent = Intent(this@HomeActivity, TurmasActivity::class.java)
                         startActivity(intent)
                         finish()
                     }
                     if(p.perfil.toString() == "2") {
-                        val intent = Intent(this@HomeActivity, TurmasActivity::class.java)
+                        val intent = Intent(this@HomeActivity, PostsActivity::class.java)
                         startActivity(intent)
                         finish()
                     }
@@ -36,12 +37,14 @@ class HomeActivity : AppCompatActivity() {
 
                 }
 
-
+                if(existe == 0){
+                    val intent = Intent(this@HomeActivity, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
 
             }
-            val intent = Intent(this@HomeActivity, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
+
         }
     }
 }
