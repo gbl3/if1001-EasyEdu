@@ -1,13 +1,12 @@
-package br.ufpe.cin.android.room
+package com.example.easyedu.turmas
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "estados")
-data class Estado(
-    @PrimaryKey (autoGenerate = true) var uf: Long,
+@Entity(tableName = "turmas")
+data class Turma(
+    @PrimaryKey var id: String,
     var nome: String
-//    var id :
 ) {
     override fun toString(): String {
         return nome

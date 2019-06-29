@@ -1,6 +1,7 @@
-package com.example.easyedu
+package com.example.easyedu.posts
 
 import androidx.room.*
+import com.example.easyedu.posts.Post
 
 @Dao
 interface PostsDAO {

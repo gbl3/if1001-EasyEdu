@@ -15,18 +15,18 @@ data class Questao(
     }
 }
 
-@Entity(tableName = "teste",
-    foreignKeys = arrayOf(ForeignKey(
-        entity = Questao::class, parentColumns = arrayOf("id"),
-        childColumns = arrayOf("t2"),
-        onDelete = ForeignKey.CASCADE)))
-
-data class Teste(
-    @PrimaryKey (autoGenerate = true) var id: Int = 0,
-    var t1: String,
-    var t2: Int
-){
-    override fun toString(): String {
-        return t1
-    }
-}
+//@Entity(tableName = "teste",
+//    foreignKeys = arrayOf(ForeignKey(
+//        entity = Questao::class, parentColumns = arrayOf("id"),
+//        childColumns = arrayOf("t2"),
+//        onDelete = ForeignKey.CASCADE)))
+//
+//data class Teste(
+//    @PrimaryKey (autoGenerate = true) var id: Int = 0,
+//    var t1: String,
+//    var t2: Int
+//){
+//    override fun toString(): String {
+//        return t1
+//    }
+//}

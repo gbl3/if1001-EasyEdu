@@ -1,9 +1,11 @@
-package com.example.easyedu
+package com.example.easyedu.autenticacao
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.*
+import com.example.easyedu.posts.PostsActivity
 import com.example.easyedu.users.UsuarioAtual
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.doAsync
@@ -36,6 +38,7 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(intent)
                         }
                     }
+                    finish()
                         }
 
                         else {

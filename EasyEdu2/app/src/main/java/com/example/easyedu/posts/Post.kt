@@ -1,14 +1,14 @@
-package com.example.easyedu
+package com.example.easyedu.posts
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "turmas")
-data class Turma(
+@Entity(tableName = "posts")
+data class Post(
     @PrimaryKey var id: String,
-    var nome: String
+    var msg: String
 ) {
     override fun toString(): String {
-        return nome
+        return msg
     }
 }

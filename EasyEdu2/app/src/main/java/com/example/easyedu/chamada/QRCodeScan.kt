@@ -1,4 +1,4 @@
-package com.example.easyedu
+package com.example.easyedu.chamada
 
 import android.app.Activity
 import android.content.Intent
@@ -6,10 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.android.synthetic.main.activity_qrcode_scan.*
-import android.R.attr.data
 import android.widget.Toast
-import com.google.zxing.integration.android.IntentResult
-
+import com.example.easyedu.R
 
 
 class QRCodeScan : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.easyedu
+package com.example.easyedu.turmas
 
 import android.content.Context
 import androidx.room.Database

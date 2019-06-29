@@ -1,7 +1,8 @@
-package com.example.easyedu
+package com.example.easyedu.posts
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.R
 import kotlinx.android.synthetic.main.adicionar_post.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

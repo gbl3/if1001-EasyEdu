@@ -1,12 +1,12 @@
-package com.example.easyedu
+package com.example.easyedu.autenticacao
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.example.easyedu.R
+import com.example.easyedu.Usuario
+import com.example.easyedu.UsuariosDB
 import kotlinx.android.synthetic.main.activity_cadastro.*
-import kotlinx.android.synthetic.main.activity_turmas.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
@@ -28,7 +28,7 @@ class InserirUsuario : AppCompatActivity() {
                 btnAluno.isChecked = false
             }
 
-            val usuario = Usuario(email = userEmail,senha =  userSenha, perfil = userPerfil)
+            val usuario = Usuario(email = userEmail, senha = userSenha, perfil = userPerfil)
             doAsync {
                 val db = UsuariosDB.getDatabase(applicationContext)
                 db.usuariosDAO().inserirUsuarios(usuario)

@@ -1,4 +1,4 @@
-package com.example.easyedu
+package com.example.easyedu.chamada
 
 import android.graphics.Bitmap
 import android.media.MediaScannerConnection
@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import com.example.easyedu.R
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.WriterException
@@ -55,7 +56,8 @@ class QRCodeGenerator : AppCompatActivity() {
         val bytes = ByteArrayOutputStream()
         myBitmap!!.compress(Bitmap.CompressFormat.JPEG, 90, bytes)
         val wallpaperDirectory = File(
-            Environment.getExternalStorageDirectory().toString() + IMAGE_DIRECTORY)
+            Environment.getExternalStorageDirectory().toString() + IMAGE_DIRECTORY
+        )
         // have the object build the directory structure, if needed.
 
         if (!wallpaperDirectory.exists()) {
@@ -91,7 +93,8 @@ class QRCodeGenerator : AppCompatActivity() {
             bitMatrix = MultiFormatWriter().encode(
                 Value,
                 BarcodeFormat.QR_CODE,
-                QRcodeWidth, QRcodeWidth, null
+                QRcodeWidth,
+                QRcodeWidth, null
             )
 
         } catch (Illegalargumentexception: IllegalArgumentException) {

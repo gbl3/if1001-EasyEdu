@@ -1,9 +1,10 @@
-package com.example.easyedu
+package com.example.easyedu.turmas
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.R
 import kotlinx.android.synthetic.main.activity_turmas.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

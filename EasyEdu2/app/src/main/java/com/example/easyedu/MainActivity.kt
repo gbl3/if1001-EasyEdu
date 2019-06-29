@@ -3,6 +3,10 @@ package com.example.easyedu
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import com.example.easyedu.chamada.QRCodeGenerator
+import com.example.easyedu.chamada.QRCodeScan
+import com.example.easyedu.posts.PostsActivity
+import com.example.easyedu.turmas.TurmasActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

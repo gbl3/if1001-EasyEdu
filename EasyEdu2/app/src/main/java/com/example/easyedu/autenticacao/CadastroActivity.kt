@@ -1,17 +1,14 @@
-package com.example.easyedu
+package com.example.easyedu.autenticacao
 
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import com.example.easyedu.prova.Questao
-import com.example.easyedu.prova.Teste
-import com.example.easyedu.prova.TestesGeral
+import com.example.easyedu.R
+import com.example.easyedu.Usuario
+import com.example.easyedu.UsuariosDB
 import kotlinx.android.synthetic.main.activity_cadastro.*
-import kotlinx.android.synthetic.main.activity_turmas.*
 import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 class CadastroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,22 +28,17 @@ class CadastroActivity : AppCompatActivity() {
                 btnAluno.isChecked = false
             }
 
-            val usuario = Usuario(email = userEmail,senha =  userSenha, perfil = userPerfil)
-            val teste = Teste(t1 = "to entendendo é nada", t2 = 2)
-            val questao = Questao(enunciado = "fodase", tipo = 2)
+            val usuario = Usuario(email = userEmail, senha = userSenha, perfil = userPerfil)
 //            Log.d("pedin", usuario.email)
             doAsync {
-                var dba = TestesGeral.getDatabase(applicationContext)
-                dba.testesDAO().inserirQuestao(questao)
-                dba.testesDAO().inserirTeste(teste)
+
                 val db = UsuariosDB.getDatabase(applicationContext)
-                val u = dba.testesDAO().tudo()
                 db.usuariosDAO().inserirUsuarios(usuario)
  //               val a = db.usuariosDAO().todosUsuarios()
 //                val b = db.usuariosDAO().todoscOUNT()
 //                Log.d("pedin",b.toString())
 //                for (kea in u){
-                    Log.d("pedin",u.toString())
+//                    Log.d("pedin",u.toString())
 
 //                }
 
