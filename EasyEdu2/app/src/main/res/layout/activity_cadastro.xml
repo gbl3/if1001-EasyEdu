@@ -54,7 +54,7 @@
             android:inputType="textPassword"
             android:layout_marginTop="20dp"
             android:ems="15"
-            android:id="@+id/editText2"/>
+            android:id="@+id/conf_senha"/>
     <Button
             android:text="Cadastrar"
             android:textColor="@color/colorPrimary"
