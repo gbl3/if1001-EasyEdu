@@ -35,12 +35,13 @@ class HomeActivity : AppCompatActivity() {
 
 
                 }
-                if(perfil == null) {
-                    val intent = Intent(this@HomeActivity, LoginActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                }
+
+
+
             }
+            val intent = Intent(this@HomeActivity, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
