@@ -15,7 +15,7 @@ import org.jetbrains.anko.uiThread
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_login_new)
 
         login.setOnClickListener(){
             val emailUser = username.text.toString()

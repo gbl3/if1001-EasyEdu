@@ -24,4 +24,11 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="LoginTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/PrimaryLogin</item>
+        <item name="colorPrimaryDark">@color/PrimaryLoginDark</item>
+        <item name="colorAccent">@color/ButtonColor</item>
+    </style>
+
 </resources>
