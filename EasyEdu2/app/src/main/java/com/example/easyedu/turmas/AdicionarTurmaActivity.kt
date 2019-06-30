@@ -2,6 +2,7 @@ package com.example.easyedu.turmas
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.EasyEduDB
 import com.example.easyedu.R
 import kotlinx.android.synthetic.main.adicionar_turma.*
 import org.jetbrains.anko.doAsync
@@ -15,10 +16,10 @@ class AdicionarTurmaActivity : AppCompatActivity() {
         btnInserirTurma.setOnClickListener {
             val turmaId = txtId.text.toString()
             val turmaNome = txtNome.text.toString()
-            val turma = Turma(turmaId, turmaNome)
+            val turma = Turma(0, nome = turmaNome, provaId = 0)
             doAsync {
                 val db = EasyEduDB.getDatabase(applicationContext)
-                db.easyEduDAO().inserirTurmas(turma)
+                db.turmasDAO().inserirTurmas(turma)
                 uiThread {
                     finish()
                 }

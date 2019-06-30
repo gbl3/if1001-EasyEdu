@@ -1,10 +1,8 @@
 package com.example.easyedu.perfil
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.example.easyedu.R
 import com.example.easyedu.UsuarioAtualDB
 import com.example.easyedu.autenticacao.LoginActivity
@@ -12,13 +10,9 @@ import com.example.easyedu.chamada.QRCodeGenerator
 import com.example.easyedu.chamada.QRCodeScan
 import com.example.easyedu.chamada.geolocalizacao.LocalActivity
 import com.example.easyedu.posts.PostsActivity
+import com.example.easyedu.prova.ProvaActivity
 import com.example.easyedu.turmas.TurmasActivity
-import com.example.easyedu.users.UsuarioAtual
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_perfil.*
-import kotlinx.android.synthetic.main.activity_perfil.btn_create_qr
-import kotlinx.android.synthetic.main.activity_perfil.btn_posts
-import kotlinx.android.synthetic.main.activity_perfil.btn_turmas
 import org.jetbrains.anko.doAsync
 
 class PerfilActivity : AppCompatActivity() {
@@ -33,6 +27,10 @@ class PerfilActivity : AppCompatActivity() {
         btn_lerqr.setOnClickListener() {
             val intent = Intent(this, QRCodeScan::class.java)
             // start your next activity
+            startActivity(intent)
+        }
+        btn_nova_prova.setOnClickListener() {
+            val intent = Intent(this, ProvaActivity::class.java)
             startActivity(intent)
         }
         btn_create_qr.setOnClickListener() {

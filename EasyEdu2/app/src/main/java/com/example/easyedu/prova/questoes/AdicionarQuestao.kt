@@ -1,4 +1,4 @@
-package com.example.easyedu.prova
+package com.example.easyedu.prova.questoes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

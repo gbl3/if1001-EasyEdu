@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.easyedu.AdapterTurmas
+import com.example.easyedu.EasyEduDB
 
 import com.example.easyedu.R
 
@@ -29,10 +29,11 @@ class TurmasActivity : AppCompatActivity() {
         super.onResume()
         val db = EasyEduDB.getDatabase(this)
         doAsync {
-            val turmas = db.easyEduDAO().todasTurmas()
+            val turmas = db.turmasDAO().todasTurmas()
             uiThread {
                 val recyclerView = listaTurmasRecyclerView
-                recyclerView.adapter = AdapterTurmas(turmas, this@TurmasActivity.applicationContext)
+                recyclerView.adapter =
+                    AdapterTurmas(turmas, this@TurmasActivity.applicationContext)
 
                 val layoutManager = LinearLayoutManager(this@TurmasActivity.applicationContext)
                 recyclerView.layoutManager = layoutManager

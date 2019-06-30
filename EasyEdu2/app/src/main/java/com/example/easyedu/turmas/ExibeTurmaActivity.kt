@@ -1,7 +1,8 @@
-package com.example.easyedu
+package com.example.easyedu.turmas
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.R
 import kotlinx.android.synthetic.main.activity_exibe_turma.*
 
 class ExibeTurmaActivity : AppCompatActivity() {

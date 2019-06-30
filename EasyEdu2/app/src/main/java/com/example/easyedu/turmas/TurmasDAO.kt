@@ -3,7 +3,7 @@ package com.example.easyedu.turmas
 import androidx.room.*
 
 @Dao
-interface EasyEduDAO {
+interface TurmasDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun inserirTurmas(vararg turma: Turma)
 
