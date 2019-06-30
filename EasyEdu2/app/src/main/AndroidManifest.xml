@@ -12,43 +12,55 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+
         <activity android:name=".ExibeTurmaActivity">
         </activity>
-        <activity android:name=".QRCodeGenerator">
-        </activity>
-        <activity android:name=".QRCodeScan">
-        </activity>
-        <activity android:name=".AdicionarTurmaActivity"> </activity>
-        <activity android:name=".AdicionarPostActivity"> </activity>
-        <activity
-                android:name=".PostsActivity"
-                android:label="@string/title_activity_turmas"
-                android:theme="@style/AppTheme.NoActionBar">
 
-        </activity>
-        <activity
-                android:name=".TurmasActivity"
-                android:label="@string/title_activity_turmas"
-                android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".HomeActivity"
+                  android:theme="@style/LoginTheme">
 
-        </activity>
-        <activity
-                android:name=".ui.login.LoginActivity"
-                android:label="@string/title_activity_login">
-        </activity>
-        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".CadastroActivity"/>
-        <!--<activity-->
-                <!--android:name=".UserProfileActivity"-->
-                <!--android:label="Profile"-->
-                <!--&gt;-->
-        <!--</activity>-->
+        <activity android:name=".perfil.PerfilActivity"
+                  android:theme="@style/LoginTheme">
+
+        </activity>
+        <activity android:name=".prova.AdicionarQuestao">
+        </activity>
+        <activity android:name=".prova.ProvaActivity">
+        </activity>
+        <activity android:name=".chamada.QRCodeGenerator">
+
+        </activity>
+        <activity android:name=".chamada.QRCodeScan">
+        </activity>
+        <activity android:name=".turmas.AdicionarTurmaActivity">
+        </activity>
+        <activity android:name=".posts.AdicionarPostActivity">
+        </activity>
+        <activity
+                android:name=".posts.PostsActivity"
+                android:label="@string/title_activity_turmas"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".turmas.TurmasActivity"
+                android:label="@string/title_activity_turmas"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".MainActivity">
+        </activity>
+
+        <activity android:name=".autenticacao.CadastroActivity"
+                  android:theme="@style/LoginTheme">
+        </activity>
+        <activity android:name=".autenticacao.LoginActivity"
+                  android:theme="@style/LoginTheme"/>
+
 
 
     </application>

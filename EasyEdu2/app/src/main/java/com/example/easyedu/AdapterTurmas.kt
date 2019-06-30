@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
+import com.example.easyedu.turmas.Turma
 import kotlinx.android.synthetic.main.turma_item.view.*
 
 class AdapterTurmas(private val listaDeTurmas: Array<Turma>,
