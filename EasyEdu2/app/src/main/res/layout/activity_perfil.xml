@@ -24,6 +24,7 @@
 
     <Button
         android:text="Alguma coisa"
+        android:id="@+id/geo"
         android:layout_marginTop="30dp"
         android:layout_width="166dp"
         android:layout_height="wrap_content"

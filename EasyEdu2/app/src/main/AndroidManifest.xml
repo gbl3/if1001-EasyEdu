@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
             android:allowBackup="true"
@@ -12,29 +14,28 @@
             android:roundIcon="@mipmap/pcbook"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-
+        <activity android:name=".chamada.geolocalizacao.LocalActivity">
+        </activity>
         <activity android:name=".ExibeTurmaActivity">
         </activity>
-
-        <activity android:name=".HomeActivity"
-                  android:theme="@style/LoginTheme">
-
+        <activity
+                android:name=".HomeActivity"
+                android:theme="@style/LoginTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".perfil.PerfilActivity"
-                  android:theme="@style/LoginTheme">
-
+        <activity
+                android:name=".perfil.PerfilActivity"
+                android:theme="@style/LoginTheme">
         </activity>
         <activity android:name=".prova.AdicionarQuestao">
         </activity>
         <activity android:name=".prova.ProvaActivity">
         </activity>
         <activity android:name=".chamada.QRCodeGenerator">
-
         </activity>
         <activity android:name=".chamada.QRCodeScan">
         </activity>
@@ -54,15 +55,13 @@
         </activity>
         <activity android:name=".MainActivity">
         </activity>
-
-        <activity android:name=".autenticacao.CadastroActivity"
-                  android:theme="@style/LoginTheme">
+        <activity
+                android:name=".autenticacao.CadastroActivity"
+                android:theme="@style/LoginTheme">
         </activity>
-        <activity android:name=".autenticacao.LoginActivity"
-                  android:theme="@style/LoginTheme"/>
-
-
-
+        <activity
+                android:name=".autenticacao.LoginActivity"
+                android:theme="@style/LoginTheme"/>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import com.example.easyedu.UsuarioAtualDB
 import com.example.easyedu.autenticacao.LoginActivity
 import com.example.easyedu.chamada.QRCodeGenerator
 import com.example.easyedu.chamada.QRCodeScan
+import com.example.easyedu.chamada.geolocalizacao.LocalActivity
 import com.example.easyedu.posts.PostsActivity
 import com.example.easyedu.turmas.TurmasActivity
 import com.example.easyedu.users.UsuarioAtual
@@ -25,7 +26,10 @@ class PerfilActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil)
-
+        geo.setOnClickListener(){
+            val intent = Intent(this,LocalActivity::class.java)
+            startActivity(intent)
+        }
         btn_lerqr.setOnClickListener() {
             val intent = Intent(this, QRCodeScan::class.java)
             // start your next activity
