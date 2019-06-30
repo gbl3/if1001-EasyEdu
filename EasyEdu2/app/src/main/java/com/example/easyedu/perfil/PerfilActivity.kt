@@ -1,8 +1,8 @@
 package com.example.easyedu.perfil
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.easyedu.R
 import com.example.easyedu.autenticacao.LoginActivity
 import com.example.easyedu.chamada.QRCodeGenerator
@@ -13,9 +13,6 @@ import com.example.easyedu.database.RoomDB
 import com.example.easyedu.posts.PostsActivity
 import com.example.easyedu.turmas.TurmasActivity
 import kotlinx.android.synthetic.main.activity_perfil.*
-import kotlinx.android.synthetic.main.activity_perfil.btn_create_qr
-import kotlinx.android.synthetic.main.activity_perfil.btn_posts
-import kotlinx.android.synthetic.main.activity_perfil.btn_turmas
 import org.jetbrains.anko.doAsync
 
 class PerfilActivity : AppCompatActivity() {

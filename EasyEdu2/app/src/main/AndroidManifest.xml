@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".chamada.geolocalizacao.LocalActivity">
         </activity>
-        <activity android:name=".ExibeTurmaActivity">
+        <activity android:name=".turmas.ExibeTurmaActivity">
         </activity>
         <activity
                 android:name=".HomeActivity"
@@ -33,7 +33,7 @@
                 android:name=".perfil.PerfilActivity"
                 android:theme="@style/LoginTheme">
         </activity>
-        <activity android:name=".prova.AdicionarQuestao">
+        <activity android:name=".prova.questoes.AdicionarQuestao">
         </activity>
         <activity android:name=".prova.ProvaActivity">
         </activity>
