@@ -61,7 +61,7 @@
                 android:padding="10dp"/>
 
         <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/conf_senha"
                 android:inputType="textPassword"
                 android:selectAllOnFocus="true"
                 android:layout_marginStart="20dp"

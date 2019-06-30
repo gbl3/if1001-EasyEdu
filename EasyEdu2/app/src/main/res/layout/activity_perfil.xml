@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/background"
+        android:background="@drawable/login_background"
         tools:context=".MainActivity">
 
 
@@ -23,44 +23,76 @@
     />
 
     <Button
-            android:text="Alguma coisa"
-            android:textColor="@color/white"
+        android:text="Alguma coisa"
+        android:layout_marginTop="30dp"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+
+            android:id="@+id/btn_lerqr"
+            android:layout_marginTop="5dp"
             android:layout_width="166dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:background="@drawable/buttongradient"
-            android:layout_marginVertical="30dp"
-            android:id="@+id/btn_"/>
-
-    <Button android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_create_qr"
-            android:background="@drawable/buttongradient"
+            android:background="@drawable/button_background"
+            android:text="Ler QR Code"
             android:textColor="@color/white"
-            android:text="Gerar QR Code"
-    />
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"
+            />
 
-    <Button android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_posts"
-            android:text="Posts"
-            android:layout_marginVertical="30dp"
-            android:background="@drawable/buttongradient"
-            android:textColor="@color/white"/>
-
-    <Button android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_turmas"
-            android:text="Criar Turmas"
-            android:background="@drawable/buttongradient"
-            android:textColor="@color/white"/>
     <Button
+            android:id="@+id/btn_create_qr"
+            android:layout_marginTop="5dp"
+            android:layout_width="166dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="Gerar QR Code"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btn_posts"
+        android:layout_marginTop="5dp"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="Posts"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+            android:id="@+id/btn_turmas"
+            android:layout_marginTop="5dp"
+            android:layout_width="166dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="Criar Turmas"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"/>
+
+    <Button
+            android:id="@+id/btn_logout"
+            android:layout_marginTop="5dp"
+            android:layout_width="166dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
             android:text="Fazer Logout"
             android:textColor="@color/white"
-            android:layout_width="166dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:background="@drawable/buttongradient"
-            android:layout_marginVertical="30dp"
-            android:id="@+id/btn_logout"/>
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"/>
+
 </LinearLayout>

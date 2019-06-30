@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".perfil.PerfilActivity">
+        <activity android:name=".perfil.PerfilActivity"
+                  android:theme="@style/LoginTheme">
+
         </activity>
         <activity android:name=".prova.AdicionarQuestao">
         </activity>
