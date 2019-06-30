@@ -26,8 +26,8 @@ class LoginActivity : AppCompatActivity() {
                 val dba = UsuarioAtualDB.getDatabase(applicationContext)
                 val usrExist = db.usuariosDAO().validaLogin(emailUser)
                 val passExist = db.usuariosDAO().validaSenha(emailUser)
-                val usrAtual = UsuarioAtual(id = 0, email = emailUser, perfil = 2)
-                if (usrExist == 1 && passExist == senhaUser){
+                val usrAtual = UsuarioAtual(id = usrExist.id, email = emailUser, perfil = usrExist.perfil)
+                if (usrExist != null && passExist == senhaUser){
                     dba.usuarioAtualDAO().inserirAtual(usrAtual)
                     uiThread {
                         Toast.makeText(this@LoginActivity, "Login efetuado com sucesso!", Toast.LENGTH_SHORT).show()
@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
                             val intent = Intent(this@LoginActivity, PerfilActivity::class.java)
                             startActivity(intent)
                         }else{
-                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            val intent = Intent(this@LoginActivity, PerfilActivity::class.java)
                             startActivity(intent)
                         }
                     }

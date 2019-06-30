@@ -54,7 +54,7 @@
             android:inputType="textPassword"
             android:layout_marginTop="20dp"
             android:ems="15"
-            android:id="@+id/conf_senha"/>
+            android:id="@+id/conf_senh"/>
     <Button
             android:text="Cadastrar"
             android:textColor="@color/colorPrimary"
@@ -63,9 +63,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
             android:layout_marginVertical="30dp"
-            android:id="@+id/btn_cadastro"/>
+            android:id="@+id/btn_cadastr"/>
     <Button
-            android:id="@+id/btn_back"
+            android:id="@+id/btn_bac"
             android:text="Voltar"
             android:textColor="@color/colorPrimary"
             android:layout_width="105dp"
