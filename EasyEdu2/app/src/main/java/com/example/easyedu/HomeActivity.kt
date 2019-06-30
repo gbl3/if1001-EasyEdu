@@ -3,11 +3,9 @@ package com.example.easyedu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.example.easyedu.autenticacao.LoginActivity
+import com.example.easyedu.database.RoomDB
 import com.example.easyedu.perfil.PerfilActivity
-import com.example.easyedu.posts.PostsActivity
-import com.example.easyedu.turmas.TurmasActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import org.jetbrains.anko.doAsync
 
@@ -19,9 +17,9 @@ class HomeActivity : AppCompatActivity() {
 
         btn_start.setOnClickListener() {
             doAsync {
-                val db = UsuarioAtualDB.getDatabase(applicationContext)
-                val perfil = db.usuarioAtualDAO().saberPerfilLogado()
-                val existe = db.usuarioAtualDAO().saberSeExiste()
+                val db = RoomDB.getDatabase(applicationContext)
+                val perfil = db.roomDAO().saberPerfilLogado()
+                val existe = db.roomDAO().saberSeExiste()
                 for(p in perfil){
 //                    Log.d("pedin",p.perfil.toString())
                     if(p.perfil.toString() == "1"){

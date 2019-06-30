@@ -3,18 +3,14 @@ package com.example.easyedu.perfil
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.example.easyedu.R
-import com.example.easyedu.UsuarioAtualDB
 import com.example.easyedu.autenticacao.LoginActivity
 import com.example.easyedu.chamada.QRCodeGenerator
 import com.example.easyedu.chamada.QRCodeScan
 import com.example.easyedu.chamada.geolocalizacao.LocalActivity
+import com.example.easyedu.database.RoomDB
 import com.example.easyedu.posts.PostsActivity
 import com.example.easyedu.turmas.TurmasActivity
-import com.example.easyedu.users.UsuarioAtual
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_perfil.*
 import kotlinx.android.synthetic.main.activity_perfil.btn_create_qr
 import kotlinx.android.synthetic.main.activity_perfil.btn_posts
@@ -58,10 +54,10 @@ class PerfilActivity : AppCompatActivity() {
 
         btn_logout.setOnClickListener(){
             doAsync {
-                val db = UsuarioAtualDB.getDatabase(applicationContext)
-                val tudo = db.usuarioAtualDAO().saberPerfilLogado()
+                val db = RoomDB.getDatabase(applicationContext)
+                val tudo = db.roomDAO().saberPerfilLogado()
                 for(atual in tudo) {
-                    db.usuarioAtualDAO().removerAtual(atual)
+                    db.roomDAO().removerAtual(atual)
                 }
                 val intent = Intent(this@PerfilActivity, LoginActivity::class.java)
                 startActivity(intent)

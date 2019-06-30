@@ -5,8 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.easyedu.R
 import com.example.easyedu.Usuario
-import com.example.easyedu.UsuariosDB
-import kotlinx.android.synthetic.main.activity_cadastro.*
+import com.example.easyedu.database.RoomDB
 import kotlinx.android.synthetic.main.activity_cadastro.EmailInput
 import kotlinx.android.synthetic.main.activity_cadastro.SenhaInput
 import kotlinx.android.synthetic.main.activity_cadastro.btnAluno
@@ -35,8 +34,8 @@ class InserirUsuario : AppCompatActivity() {
 
             val usuario = Usuario(email = userEmail, senha = userSenha, perfil = userPerfil)
             doAsync {
-                val db = UsuariosDB.getDatabase(applicationContext)
-                db.usuariosDAO().inserirUsuarios(usuario)
+                val db = RoomDB.getDatabase(applicationContext)
+                db.roomDAO().inserirUsuarios(usuario)
                 uiThread {
                     finish()
 

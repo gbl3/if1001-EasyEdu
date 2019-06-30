@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.easyedu.R
+import com.example.easyedu.database.RoomDB
 import kotlinx.android.synthetic.main.activity_posts.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -36,9 +37,9 @@ class PostsActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val db = PostsDB.getDatabase(this)
+        val db = RoomDB.getDatabase(this)
         doAsync {
-            val posts = db.postsDAO().todosPosts()
+            val posts = db.roomDAO().todosPosts()
             uiThread {
                 val adapter = ArrayAdapter<Post> (
                     applicationContext,
