@@ -7,9 +7,9 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/pcbook"
             android:label="EasyEdu"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@mipmap/pcbook"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
 
