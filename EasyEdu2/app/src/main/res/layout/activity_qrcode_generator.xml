@@ -5,33 +5,45 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:gravity="center"
-              android:background="@drawable/background"
+              android:background="@drawable/login_background"
               tools:context="com.example.easyedu.chamada.QRCodeGenerator">
 
+
     <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingBottom="80dp"
-            android:id="@+id/iv"/>
+            android:id="@+id/iv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/qrcode"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"/>
 
     <EditText
-            android:layout_width="343dp"
-            android:layout_height="wrap_content"
             android:id="@+id/etqr"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
-            android:hint="Digite um código"/>
+            android:inputType="textEmailAddress"
+            android:selectAllOnFocus="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:hint="Digite um código"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:drawablePadding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_edit_background"
+            android:padding="10dp"
+    />
 
     <Button
-            android:layout_width="146dp"
-            android:layout_height="wrap_content"
             android:id="@+id/btn"
-            android:background="@drawable/buttongradient"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
             android:text="Gerar QR Code"
             android:textColor="@color/white"
-            android:layout_marginTop="10dp"/>
-
-
+            android:textAllCaps="false"
+            android:textSize="21sp"
+            android:layout_marginBottom="10dp"/>
 
 </LinearLayout>
