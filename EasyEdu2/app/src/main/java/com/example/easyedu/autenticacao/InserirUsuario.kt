@@ -7,6 +7,11 @@ import com.example.easyedu.R
 import com.example.easyedu.Usuario
 import com.example.easyedu.UsuariosDB
 import kotlinx.android.synthetic.main.activity_cadastro.*
+import kotlinx.android.synthetic.main.activity_cadastro.EmailInput
+import kotlinx.android.synthetic.main.activity_cadastro.SenhaInput
+import kotlinx.android.synthetic.main.activity_cadastro.btnAluno
+import kotlinx.android.synthetic.main.activity_cadastro.btnProfessor
+import kotlinx.android.synthetic.main.activity_cadastro_new.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 

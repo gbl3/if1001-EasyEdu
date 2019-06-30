@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/login_background"
-        tools:context=".MainActivity">
+        tools:context=".autenticacao.CadastroActivity">
 
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                 android:padding="10dp"/>
 
         <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/conf_senha"
                 android:inputType="textPassword"
                 android:selectAllOnFocus="true"
                 android:layout_marginStart="20dp"

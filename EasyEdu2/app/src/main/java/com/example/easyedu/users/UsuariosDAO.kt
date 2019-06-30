@@ -22,8 +22,8 @@ interface UsuariosDAO {
     @Query("SELECT * FROM usuarios WHERE email LIKE :q")
     fun buscaUsuarioPeloEmail(q : String) : List<Usuario>
 
-    @Query("SELECT COUNT(*) FROM usuarios WHERE email LIKE :q")
-    fun validaLogin(q : String) : Int
+    @Query("SELECT * FROM usuarios WHERE email LIKE :q")
+    fun validaLogin(q : String) : Usuario
 
     @Query("SELECT senha FROM usuarios WHERE email LIKE :q")
     fun validaSenha(q : String) : String
