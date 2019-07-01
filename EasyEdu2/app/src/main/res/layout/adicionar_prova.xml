@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_background">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
+
+        <ImageView android:layout_width="100dp"
+                   android:layout_height="100dp"
+                   android:src="@drawable/classe"
+                   android:layout_gravity="center_horizontal"
+                   android:layout_marginBottom="10dp"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="@string/btnCriarProva"
+                android:textColor="@color/white"
+                android:textSize="21sp" />
+
+
+
+        <EditText
+                android:id="@+id/txtTituloProva"
+                android:selectAllOnFocus="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Titulo"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:drawablePadding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_edit_background"
+                android:padding="10dp"
+        />
+
+        <Button
+                android:id="@+id/btnInserirQuestao"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="Inserir Questao"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="21sp"
+                android:layout_marginBottom="0dp"/>
+        <Button
+                android:id="@+id/btnCriarProva"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="Criar Prova"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="21sp"
+                android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+</RelativeLayout>

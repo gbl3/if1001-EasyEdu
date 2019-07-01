@@ -49,19 +49,19 @@
             android:textSize="15sp"
             android:layout_marginBottom="10dp"
             />
-    <Button
+    <!--<Button-->
 
-            android:id="@+id/btn_nova_prova"
-            android:layout_marginTop="5dp"
-            android:layout_width="166dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
-            android:text="Criar prova"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:textSize="15sp"
-            android:layout_marginBottom="10dp"
-    />
+            <!--android:id="@+id/btn_nova_prova"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_width="166dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/button_background"-->
+            <!--android:text="Criar prova"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_marginBottom="10dp"-->
+    <!--/>-->
 
     <Button
             android:id="@+id/btn_create_qr"

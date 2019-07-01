@@ -10,7 +10,6 @@ import com.example.easyedu.chamada.QRCodeGenerator
 import com.example.easyedu.chamada.QRCodeScan
 import com.example.easyedu.chamada.geolocalizacao.LocalActivity
 import com.example.easyedu.posts.PostsActivity
-import com.example.easyedu.prova.ProvaActivity
 import com.example.easyedu.turmas.TurmasActivity
 import kotlinx.android.synthetic.main.activity_perfil.*
 import org.jetbrains.anko.doAsync
@@ -27,10 +26,6 @@ class PerfilActivity : AppCompatActivity() {
         btn_lerqr.setOnClickListener() {
             val intent = Intent(this, QRCodeScan::class.java)
             // start your next activity
-            startActivity(intent)
-        }
-        btn_nova_prova.setOnClickListener() {
-            val intent = Intent(this, ProvaActivity::class.java)
             startActivity(intent)
         }
         btn_create_qr.setOnClickListener() {

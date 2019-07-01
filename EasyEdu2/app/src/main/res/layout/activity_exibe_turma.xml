@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
-              android:layout_width="match_parent"
-              android:orientation="vertical"
-              xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
             android:text="ID da Turma"
@@ -27,7 +28,21 @@
     <TextView
             android:text="TextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="30sp"
             android:id="@+id/nomeTurmaAtual"/>
+    <Button
+
+            android:id="@+id/btn_nova_prova"
+            android:layout_marginTop="5dp"
+            android:layout_width="166dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="Criar prova"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"
+    />
 </LinearLayout>
+
