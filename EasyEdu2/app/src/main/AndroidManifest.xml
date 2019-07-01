@@ -33,7 +33,7 @@
                 android:name=".perfil.PerfilActivity"
                 android:theme="@style/LoginTheme">
         </activity>
-        <activity android:name=".prova.questoes.AdicionarQuestao">
+        <activity android:name=".prova.questoes.InserirQuestaoActivity">
         </activity>
         <activity android:name=".prova.ProvaActivity">
         </activity>

@@ -12,25 +12,46 @@
             android:layout_margin="5dp"
             android:textStyle="bold"/>
     <EditText
-            android:id="@+id/txtId"
+            android:id="@+id/enunciadoQuestao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Não sei"
+            android:text="Tipo da Questão"
             android:layout_margin="5dp"
             android:textStyle="bold"/>
-    <EditText
-            android:id="@+id/txtMsg"
+
+    <RadioGroup
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/selectTipoQuestao"
+            android:layout_width="match_parent">
+        <RadioButton
+                android:text="@string/questaoAberta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="tipoQuestaoClicked"
+                android:id="@+id/btnQuestaoAberta"/>
+        <RadioButton
+                android:text="@string/questaoFechada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="tipoQuestaoClicked"
+                android:id="@+id/btnQuestaoFechada"/>
+    </RadioGroup>
+
+    <LinearLayout
+            android:id="@+id/conteudoQuestao"
             android:layout_width="match_parent"
+            android:orientation="vertical"
             android:layout_height="wrap_content"/>
 
     <Button
-            android:id="@+id/btnInserirPost"
+            android:id="@+id/btnAddQuestao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Publicar"/>
+            android:text="Adicionar Questão"/>
 
 </LinearLayout>
