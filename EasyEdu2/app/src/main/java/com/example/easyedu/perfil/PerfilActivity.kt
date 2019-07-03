@@ -2,12 +2,14 @@ package com.example.easyedu.perfil
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View.INVISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import com.example.easyedu.R
 import com.example.easyedu.autenticacao.LoginActivity
 import com.example.easyedu.chamada.QRCodeGenerator
 import com.example.easyedu.chamada.QRCodeScan
 import com.example.easyedu.chamada.geolocalizacao.LocalActivity
+import com.example.easyedu.chamada.geolocalizacao.MostrarPresencas
 import com.example.easyedu.chamada.geolocalizacao.Transicao
 import com.example.easyedu.database.RoomDB
 import com.example.easyedu.posts.PostsActivity
@@ -20,8 +22,24 @@ class PerfilActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil)
+
+        doAsync {
+            val db = RoomDB.getDatabase(applicationContext)
+            val perfil = db.roomDAO().saberPerfilLogado()
+
+            for (p in perfil){
+                if (p.perfil == 2){
+                    btn_lerqr.visibility = INVISIBLE
+
+                }else{
+                    geo.visibility = INVISIBLE
+                    btn_create_qr.visibility = INVISIBLE
+                    btn_turmas.visibility = INVISIBLE
+                }
+            }
+        }
         geo.setOnClickListener(){
-            val intent = Intent(this,LocalActivity::class.java)
+            val intent = Intent(this,MostrarPresencas::class.java)
             startActivity(intent)
         }
         btn_lerqr.setOnClickListener() {

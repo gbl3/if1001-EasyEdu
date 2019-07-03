@@ -5,7 +5,7 @@ import com.example.easyedu.Usuario
 import com.example.easyedu.chamada.Professor
 import com.example.easyedu.chamada.geolocalizacao.Presenca
 import com.example.easyedu.posts.Post
-import com.example.easyedu.prova.Questao
+//import com.example.easyedu.prova.Questao
 import com.example.easyedu.turmas.Turma
 import com.example.easyedu.users.UsuarioAtual
 
@@ -20,8 +20,8 @@ interface RoomDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun inserirProfessor(vararg professor: Professor)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun inserirQuestao(vararg questao: Questao)
+//    @Insert(onConflict = OnConflictStrategy.REPLACE)
+//    fun inserirQuestao(vararg questao: Questao)
 
     @Update
     fun atualizarPosts(vararg post: Post)
@@ -47,6 +47,11 @@ interface RoomDAO {
     @Update
     fun atualizarTurmas(vararg turma: Turma)
 
+    @Update
+    fun atualizarPresenca(vararg presenca: Presenca)
+
+    @Query("SELECT * FROM presenca GROUP BY idAluno")
+    fun todasPresencasview() : Array<Presenca>
     @Update
     fun atualizarProf(vararg professor: Professor)
 

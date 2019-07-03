@@ -83,7 +83,7 @@ class LocalActivity : AppCompatActivity() {
         if (hasGps) {
             if (hasGps) {
                 Log.d("CodeAndroidLocation", "hasGps")
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 200000, 0F, object : LocationListener {
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 0F, object : LocationListener {
                     override fun onLocationChanged(location: Location?) {
                         doAsync {
                             val db = RoomDB.getDatabase(applicationContext)
@@ -113,8 +113,7 @@ class LocalActivity : AppCompatActivity() {
                                         Log.d("ped", " GPS Longitude : " + locationGps!!.longitude)
                                         Log.d("ped", " GPS LATITUDE : " + locationGps!!.latitude)
                                         if (d > 30){
-
-                                            val intent = Intent(this@LocalActivity, finalChamada::class.java)
+                                            val intent = Intent(this@LocalActivity, PerfilActivity::class.java)
                                             startActivity(intent)
                                             val intent1 = Intent("android.location.GPS_ENABLED_CHANGE")
                                             intent1.putExtra("enabled", false)
@@ -122,13 +121,29 @@ class LocalActivity : AppCompatActivity() {
 
                                             finish()
                                         }else{
-                                            db.roomDAO().inserirPresenca(local)
+
                                             val intent = Intent(this@LocalActivity, PerfilActivity::class.java)
                                             startActivity(intent)
-                                            val intent1 = Intent("android.location.GPS_ENABLED_CHANGE")
-                                            intent1.putExtra("enabled", false)
-                                            sendBroadcast(intent1)
-                                            finish()
+                                            db.roomDAO().inserirPresenca(local)
+                                            val todos = db.roomDAO().todasPresencas()
+
+                                            Log.d("entrou", todos.size.toString())
+                                            for (x in todos) {
+                                                for (y in idAluno) {
+                                                    if (x.idAluno == y.id) {
+                                                        db.roomDAO().atualizarPresenca(local)
+                                                        val intent1 = Intent("android.location.GPS_ENABLED_CHANGE")
+                                                        intent1.putExtra("enabled", false)
+                                                        sendBroadcast(intent1)
+                                                        finish()
+
+                                                    } else {
+                                                        db.roomDAO().inserirPresenca(local)
+                                                        Log.d("entrouaq", x.presenca)
+                                                    }
+                                                    Log.d("entrou", x.presenca)
+                                                }
+                                            }
                                         }
 
                                     }

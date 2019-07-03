@@ -75,6 +75,14 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/login_edit_background"
                 android:padding="10dp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Obrigatoriamente escolha um perfil!"
+                android:textColor="@color/white"
+                android:textSize="11sp"/>
 
         <CheckBox
                 android:id="@+id/btnAluno"
@@ -88,7 +96,7 @@
                 android:layout_height="wrap_content" />
         <CheckBox
                 android:id="@+id/btnProfessor"
-                android:text="Professor"
+                android:text="Prof"
                 android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_marginTop="-32dp"

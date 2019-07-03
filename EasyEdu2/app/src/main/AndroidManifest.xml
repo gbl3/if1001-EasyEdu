@@ -47,6 +47,7 @@
         <activity android:name=".chamada.QRCodeScan"
                   android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".chamada.geolocalizacao.MostrarPresencas"/>
         <activity android:name=".turmas.AdicionarTurmaActivity"
                   android:theme="@style/AppTheme.NoActionBar">
         </activity>

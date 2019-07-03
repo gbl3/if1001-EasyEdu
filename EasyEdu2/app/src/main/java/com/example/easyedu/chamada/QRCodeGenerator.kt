@@ -66,7 +66,7 @@ class QRCodeGenerator : AppCompatActivity() {
                     iv!!.setImageBitmap(bitmap)
                     val path = saveImage(bitmap)  //give read write permission
                     //getLocation()
-                    Toast.makeText(this@QRCodeGenerator, "QRCode Salvo em -> $path", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@QRCodeGenerator, "QRCode Gerado! $path", Toast.LENGTH_SHORT).show()
                 } catch (e: WriterException) {
                     e.printStackTrace()
                 }

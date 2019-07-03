@@ -39,7 +39,7 @@ class CadastroActivity : AppCompatActivity() {
                 btnAluno.isChecked = false
             }
 
-            if (userConf == userSenha) {
+            if (userConf == userSenha && userPerfil != 0) {
                 val usuario = Usuario(email = userEmail, senha = userSenha, perfil = userPerfil)
 //            Log.d("pedin", usuario.email)
                 doAsync {
@@ -67,7 +67,7 @@ class CadastroActivity : AppCompatActivity() {
                 Toast.makeText(this, "Cadastro efetuado com sucesso!", Toast.LENGTH_SHORT).show()
                 finish()
             }else{
-                Toast.makeText(this, "A confirmação de senha deve ser igual a senha escolhida!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "A confirmação de senha deve ser igual a senha escolhida! Ou você não selecionou um perfil.", Toast.LENGTH_SHORT).show()
             }
 
         }

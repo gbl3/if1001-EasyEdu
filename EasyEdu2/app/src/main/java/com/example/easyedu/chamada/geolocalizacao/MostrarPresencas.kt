@@ -15,30 +15,40 @@ import org.jetbrains.anko.uiThread
 
 class MostrarPresencas : AppCompatActivity() {
 
-    var presenca: Array<Presenca>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mostrar_presencas)
 
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-        val db = RoomDB.getDatabase(applicationContext)
+        val db = RoomDB.getDatabase(this)
         doAsync {
-            val presenca = db.roomDAO().todasPresencas()
+            val presencas = db.roomDAO().todasPresencasview()
             uiThread {
                 val adapter = ArrayAdapter<Presenca> (
                     applicationContext,
-                    R.layout.mostrar_presencas,
-                    presenca
+                    R.layout.content_presenca,
+                    presencas
                 )
                 listaPresenca.setAdapter(adapter)
             }
         }
+//        val db = RoomDB.getDatabase(applicationContext)
+//        doAsync {
+//            val presenca = db.roomDAO().todasPresencas()
+//            for (x in presenca){
+//                var email = db.roomDAO().todosUsuarios()
+//                for (y in email) {
+//                    if (y.id == x.idAluno) {
+//                        listaPresenca.text = listaPresenca.toString() + y.email + " está presente."
+//                    }
+//                }
+//            }
+//            }
+        }
+
 
     }
 
 
-}
+
+
