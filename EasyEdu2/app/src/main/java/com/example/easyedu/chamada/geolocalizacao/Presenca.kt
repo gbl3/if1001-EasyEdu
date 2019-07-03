@@ -11,6 +11,6 @@ data class Presenca(
 
 ) {
     override fun toString(): String {
-        return presenca
+        return "O Aluno de ID: " + idAluno.toString() + " está presente."
     }
 }

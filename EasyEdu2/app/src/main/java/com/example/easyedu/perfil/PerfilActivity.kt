@@ -2,14 +2,20 @@ package com.example.easyedu.perfil
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View.INVISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import com.example.easyedu.EasyEduDB
 import com.example.easyedu.R
 import com.example.easyedu.autenticacao.LoginActivity
+import com.example.easyedu.chamada.QRCodeGenerator
 import com.example.easyedu.chamada.QRCodeScan
 import com.example.easyedu.chamada.geolocalizacao.LocalActivity
+import com.example.easyedu.chamada.geolocalizacao.MostrarPresencas
 import com.example.easyedu.chamada.geolocalizacao.Transicao
+import com.example.easyedu.posts.AdicionarPostActivity
 import com.example.easyedu.posts.PostsActivity
+import com.example.easyedu.turmas.AdapterTurmas
+import com.example.easyedu.turmas.ExibeTurmaActivity
 import com.example.easyedu.turmas.TurmasActivity
 import kotlinx.android.synthetic.main.activity_perfil.*
 import org.jetbrains.anko.doAsync
@@ -19,8 +25,24 @@ class PerfilActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil)
+
+        doAsync {
+            val db = EasyEduDB.getDatabase(applicationContext)
+            val perfil = db.usuarioAtualDAO().saberPerfilLogado()
+
+            for (p in perfil){
+                if (p.perfil == 2){
+                    btn_lerqr.visibility = INVISIBLE
+
+                }else{
+                    geo.visibility = INVISIBLE
+                    btn_create_qr.visibility = INVISIBLE
+                    btn_turmas.visibility = INVISIBLE
+                }
+            }
+        }
         geo.setOnClickListener(){
-            val intent = Intent(this,LocalActivity::class.java)
+            val intent = Intent(this,MostrarPresencas::class.java)
             startActivity(intent)
         }
         btn_lerqr.setOnClickListener() {
@@ -35,7 +57,12 @@ class PerfilActivity : AppCompatActivity() {
         }
         btn_posts.setOnClickListener() {
 
-            val intent = Intent(this, PostsActivity::class.java)//<<<<<<< HEAD
+            val intent = Intent(this, AdicionarPostActivity::class.java)//<<<<<<< HEAD
+//            val intent = Intent(this, UserProfileActivity::class.java)
+//=======
+//            val intent = Intent(this,UserProfileActivity::class.java)
+//>>>>>>> 00115c4abec03f74ebc0278626c9da02a4a09e36
+
             startActivity(intent)
         }
         btn_turmas.setOnClickListener() {

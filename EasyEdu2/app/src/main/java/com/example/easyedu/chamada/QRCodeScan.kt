@@ -28,9 +28,12 @@ class QRCodeScan : AppCompatActivity() {
             val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
             if (result != null) {
                 if (result.contents == null) {
-                    Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Cancelado", Toast.LENGTH_LONG).show()
                 } else {
-                    Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Leitura realizada com sucesso! " + result.contents, Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, finalChamada::class.java)
+                    intent.putExtra("codigo", result.contents)
+                    startActivity(intent)
                 }
             } else {
                 super.onActivityResult(requestCode, resultCode, data)
