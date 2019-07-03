@@ -6,8 +6,9 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.easyedu.EasyEduDB
 import com.example.easyedu.R
-import com.example.easyedu.database.RoomDB
 import kotlinx.android.synthetic.main.activity_posts.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -21,22 +22,22 @@ class PostsActivity : AppCompatActivity() {
 
         btnAddPost.setOnClickListener {
             val intent = Intent(this, AdicionarPostActivity::class.java)
+            intent.putExtra("idTurma", intent.getStringExtra("idTurma"))
             startActivity(intent)
         }
     }
 
     override fun onResume() {
         super.onResume()
-        val db = RoomDB.getDatabase(this)
+        val db = EasyEduDB.getDatabase(this)
         doAsync {
-            val posts = db.roomDAO().todosPosts()
+            val posts = db.postsDAO().todosPosts()
             uiThread {
-                val adapter = ArrayAdapter<Post> (
-                    applicationContext,
-                    R.layout.post,
-                    posts
-                )
-                listaPosts.setAdapter(adapter)
+                val recyclerView = listaPosts
+                recyclerView.adapter = AdapterPosts(posts, this@PostsActivity.applicationContext)
+
+                val layoutManager = LinearLayoutManager(this@PostsActivity.applicationContext)
+                recyclerView.layoutManager = layoutManager
             }
         }
 
