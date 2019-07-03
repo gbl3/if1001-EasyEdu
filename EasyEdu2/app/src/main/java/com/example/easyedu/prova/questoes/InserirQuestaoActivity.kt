@@ -21,10 +21,11 @@ class InserirQuestaoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_adicionar_questao)
 
         btnAddQuestao.setOnClickListener{
-            if (btnQuestaoFechada.isChecked) {
-                setAlternativas()
-                TODO("Precisa complementar")
-            } else if (btnQuestaoAberta.isChecked) {
+//            if (btnQuestaoFechada.isChecked) {
+//                setAlternativas()
+//                TODO("Precisa complementar")
+//            } else
+                if (btnQuestaoAberta.isChecked) {
                 var idProva: String = intent.getStringExtra("idProva")
                 val enunciadoQuestao = enunciadoQuestao.text.toString()
                 val questao = Questao(0,

@@ -33,9 +33,11 @@
                 android:name=".perfil.PerfilActivity"
                 android:theme="@style/LoginTheme">
         </activity>
-        <activity android:name=".prova.questoes.InserirQuestaoActivity">
+        <activity android:name=".prova.questoes.InserirQuestaoActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".prova.ProvaActivity">
+        <activity android:name=".prova.ProvaActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".chamada.QRCodeGenerator"
                   android:theme="@style/AppTheme.NoActionBar">
@@ -61,11 +63,14 @@
         </activity>
         <!--<activity android:name=".MainActivity">-->
         <!--</activity>-->
-        <activity android:name=".prova.ExibeProvaActivity">
+        <activity android:name=".prova.ExibeProvaActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".turmas.ExibeTurmaActivity">
+        <activity android:name=".turmas.ExibeTurmaActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".prova.AdicionarProvaActivity">
+        <activity android:name=".prova.AdicionarProvaActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
                 android:name=".autenticacao.CadastroActivity"

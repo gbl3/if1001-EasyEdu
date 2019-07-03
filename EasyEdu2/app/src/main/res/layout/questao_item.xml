@@ -8,8 +8,10 @@
             android:id="@+id/enunciadoQuestao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textAlignment="center"
-            android:text="Enunciado da Questão"/>
+            android:text="Enunciado da Questão"
+            android:background="@drawable/login_background"
+            android:textColor="@color/white"/>
 </LinearLayout>
 

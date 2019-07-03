@@ -8,8 +8,10 @@
             android:id="@+id/tituloProva"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textAlignment="center"
-            android:text="Titulo da Prova"/>
+            android:text="Titulo da Prova"
+            android:textColor="@color/white"
+            android:background="@drawable/post_button"/>
 </LinearLayout>
 

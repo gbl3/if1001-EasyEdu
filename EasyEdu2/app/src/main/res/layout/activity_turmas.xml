@@ -3,13 +3,20 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/login_background">
 
     <Button
             android:id="@+id/btnAddTurma"
+            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btnAddTurma"/>
+            android:background="@drawable/button_background"
+            android:text="@string/btnAddTurma"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="21sp"
+            android:layout_marginBottom="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listaTurmasRecyclerView"

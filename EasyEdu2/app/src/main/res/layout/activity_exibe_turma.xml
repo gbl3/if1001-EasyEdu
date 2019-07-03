@@ -1,35 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_background"
+>
 
-    <TextView
-            android:text="Nome da Turma"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="25sp"/>
-    <TextView
-            android:text="TextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:id="@+id/nomeTurmaAtual"/>
-    <Button
-            android:id="@+id/btnVerProvas"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
-            android:textAlignment="center"
-            android:text="Ver provas da turma"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:textSize="21sp"
-            android:layout_marginBottom="10dp"
-    />
-</LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_centerVertical="true">
 
+        <ImageView android:layout_width="100dp"
+                   android:layout_height="100dp"
+                   android:src="@drawable/sala"
+                   android:layout_gravity="center_horizontal"
+                   android:layout_marginBottom="10dp"/>
+
+        <TextView
+                android:text="Nome da Turma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="25sp"/>
+
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:id="@+id/nomeTurmaAtual"
+                android:textAlignment="center"
+                android:textColor="@color/white"/>
+
+        <Button
+                android:id="@+id/btnVerProvas"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="Ver provas da turma"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="21sp"
+                android:layout_marginBottom="10dp"/>
+
+
+    </LinearLayout>
+</RelativeLayout>
