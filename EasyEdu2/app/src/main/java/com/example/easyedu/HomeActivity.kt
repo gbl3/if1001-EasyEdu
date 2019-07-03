@@ -1,8 +1,8 @@
 package com.example.easyedu
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.easyedu.autenticacao.LoginActivity
 import com.example.easyedu.database.RoomDB
 import com.example.easyedu.perfil.PerfilActivity
@@ -21,7 +21,6 @@ class HomeActivity : AppCompatActivity() {
                 val perfil = db.roomDAO().saberPerfilLogado()
                 val existe = db.roomDAO().saberSeExiste()
                 for(p in perfil){
-//                    Log.d("pedin",p.perfil.toString())
                     if(p.perfil.toString() == "1"){
                         val intent = Intent(this@HomeActivity, PerfilActivity::class.java)
                         startActivity(intent)
@@ -32,18 +31,13 @@ class HomeActivity : AppCompatActivity() {
                         startActivity(intent)
                         finish()
                     }
-
-
                 }
-
                 if(existe == 0){
                     val intent = Intent(this@HomeActivity, LoginActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
-
             }
-
         }
     }
 }

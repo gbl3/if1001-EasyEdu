@@ -1,6 +1,5 @@
 package com.example.easyedu.users
 
-import android.provider.ContactsContract
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

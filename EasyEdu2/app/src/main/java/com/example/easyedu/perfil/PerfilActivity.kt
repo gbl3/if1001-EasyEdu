@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.easyedu.R
 import com.example.easyedu.autenticacao.LoginActivity
-import com.example.easyedu.chamada.QRCodeGenerator
 import com.example.easyedu.chamada.QRCodeScan
 import com.example.easyedu.chamada.geolocalizacao.LocalActivity
 import com.example.easyedu.chamada.geolocalizacao.Transicao
@@ -37,11 +36,6 @@ class PerfilActivity : AppCompatActivity() {
         btn_posts.setOnClickListener() {
 
             val intent = Intent(this, PostsActivity::class.java)//<<<<<<< HEAD
-//            val intent = Intent(this, UserProfileActivity::class.java)
-//=======
-//            val intent = Intent(this,UserProfileActivity::class.java)
-//>>>>>>> 00115c4abec03f74ebc0278626c9da02a4a09e36
-
             startActivity(intent)
         }
         btn_turmas.setOnClickListener() {

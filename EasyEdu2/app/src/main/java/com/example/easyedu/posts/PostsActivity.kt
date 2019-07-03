@@ -23,16 +23,6 @@ class PostsActivity : AppCompatActivity() {
             val intent = Intent(this, AdicionarPostActivity::class.java)
             startActivity(intent)
         }
-
-//        val qtdTurmas = 20
-//
-//        for (i in 1..qtdTurmas) {
-//            val turma = Button(this)
-//
-//            turma_screen.addView(turma)
-//        }
-
-
     }
 
     override fun onResume() {
