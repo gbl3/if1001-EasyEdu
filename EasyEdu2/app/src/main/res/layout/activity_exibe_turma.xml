@@ -60,6 +60,32 @@
                 android:textSize="21sp"
                 android:layout_marginBottom="10dp"/>
 
+        <Button
+
+                android:id="@+id/btn_lerqr"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="Ler QR Code"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="21sp"
+                android:layout_marginBottom="10dp"
+        />
+
+        <Button
+                android:id="@+id/btn_create_qr"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="Gerar QR Code"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="21sp"
+                android:layout_marginBottom="10dp"/>
+
 
     </LinearLayout>
 </RelativeLayout>

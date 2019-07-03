@@ -23,21 +23,7 @@ class PerfilActivity : AppCompatActivity() {
             val intent = Intent(this,LocalActivity::class.java)
             startActivity(intent)
         }
-        btn_lerqr.setOnClickListener() {
-            val intent = Intent(this, QRCodeScan::class.java)
-            // start your next activity
-            startActivity(intent)
-        }
-        btn_create_qr.setOnClickListener() {
-            val intent = Intent(this, Transicao::class.java)
 
-            startActivity(intent)
-        }
-        btn_posts.setOnClickListener() {
-
-            val intent = Intent(this, PostsActivity::class.java)//<<<<<<< HEAD
-            startActivity(intent)
-        }
         btn_turmas.setOnClickListener() {
             val intent = Intent(this, TurmasActivity::class.java)
 
