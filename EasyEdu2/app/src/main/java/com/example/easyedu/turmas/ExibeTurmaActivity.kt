@@ -16,7 +16,6 @@ class ExibeTurmaActivity : AppCompatActivity() {
         var idTurma: String = intent.getStringExtra("idTurma")
         var nomeTurma: String = intent.getStringExtra("nomeTurma")
 
-        idTurmaAtual.text = idTurma
         nomeTurmaAtual.text = nomeTurma
 
         btnVerProvas.setOnClickListener() {

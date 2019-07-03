@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.easyedu.EasyEduDB
 import com.example.easyedu.R
-import com.example.easyedu.database.RoomDB
 import kotlinx.android.synthetic.main.adicionar_turma.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread

@@ -8,7 +8,7 @@ import com.example.easyedu.Usuario
 import com.example.easyedu.chamada.Professor
 import com.example.easyedu.chamada.geolocalizacao.Presenca
 import com.example.easyedu.posts.Post
-import com.example.easyedu.prova.Questao
+import com.example.easyedu.prova.questoes.Questao
 import com.example.easyedu.turmas.Turma
 import com.example.easyedu.users.UsuarioAtual
 

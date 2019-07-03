@@ -17,6 +17,7 @@ class AdapterTurmas(private val listaDeTurmas: Array<Turma>,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val turma = listaDeTurmas[position]
         holder?.let {
+            it.idTurma.text = turma.id.toString()
             it.nomeTurma.text = turma.nome
         }
 
@@ -38,6 +39,7 @@ class AdapterTurmas(private val listaDeTurmas: Array<Turma>,
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val idTurma = itemView.turma_item_id
         val nomeTurma = itemView.turma_item_nome
     }
 }

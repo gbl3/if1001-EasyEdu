@@ -28,7 +28,6 @@ class TurmasActivity : AppCompatActivity() {
         val db = EasyEduDB.getDatabase(this)
         doAsync {
             val turmas = db.turmasDAO().todasTurmas()
-
             uiThread {
                 val recyclerView = listaTurmasRecyclerView
                 recyclerView.adapter =
