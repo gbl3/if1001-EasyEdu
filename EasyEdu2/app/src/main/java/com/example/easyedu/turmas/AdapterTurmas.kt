@@ -1,4 +1,4 @@
-package com.example.easyedu
+package com.example.easyedu.turmas
 
 
 import android.content.Context
@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
-import com.example.easyedu.turmas.Turma
+import com.example.easyedu.R
 import kotlinx.android.synthetic.main.turma_item.view.*
 
 class AdapterTurmas(private val listaDeTurmas: Array<Turma>,
@@ -17,13 +17,12 @@ class AdapterTurmas(private val listaDeTurmas: Array<Turma>,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val turma = listaDeTurmas[position]
         holder?.let {
-            //it.idTurma.text = turma.id
             it.nomeTurma.text = turma.nome
         }
 
         holder.nomeTurma.setOnClickListener{
             val intent = Intent(context, ExibeTurmaActivity::class.java)
-            intent.putExtra("idTurma", turma.id)
+            intent.putExtra("idTurma", turma.id.toString())
             intent.putExtra("nomeTurma", turma.nome)
             context.startActivity(intent)
         }
@@ -39,7 +38,6 @@ class AdapterTurmas(private val listaDeTurmas: Array<Turma>,
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        val idTurma = itemView.turma_item_id
         val nomeTurma = itemView.turma_item_nome
     }
 }

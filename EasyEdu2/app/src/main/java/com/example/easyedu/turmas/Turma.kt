@@ -3,9 +3,11 @@ package com.example.easyedu.turmas
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "turmas")
+@Entity(
+    tableName = "turmas"
+)
 data class Turma(
-    @PrimaryKey var id: String,
+    @PrimaryKey(autoGenerate = true) var id: Int,
     var nome: String
 ) {
     override fun toString(): String {

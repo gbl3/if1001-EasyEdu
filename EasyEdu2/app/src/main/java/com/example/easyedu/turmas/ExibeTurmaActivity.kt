@@ -1,7 +1,10 @@
-package com.example.easyedu
+package com.example.easyedu.turmas
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.R
+import com.example.easyedu.prova.ProvaActivity
 import kotlinx.android.synthetic.main.activity_exibe_turma.*
 
 class ExibeTurmaActivity : AppCompatActivity() {
@@ -15,5 +18,11 @@ class ExibeTurmaActivity : AppCompatActivity() {
 
         idTurmaAtual.text = idTurma
         nomeTurmaAtual.text = nomeTurma
+
+        btnVerProvas.setOnClickListener() {
+            val newIntent = Intent(this, ProvaActivity::class.java)
+            newIntent.putExtra("idTurma", idTurma)
+            startActivity(newIntent)
+        }
     }
 }

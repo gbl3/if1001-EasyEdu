@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".chamada.geolocalizacao.LocalActivity">
         </activity>
-        <activity android:name=".ExibeTurmaActivity">
+        <activity android:name=".turmas.ExibeTurmaActivity">
         </activity>
         <activity
                 android:name=".HomeActivity"
@@ -33,12 +33,16 @@
                 android:name=".perfil.PerfilActivity"
                 android:theme="@style/LoginTheme">
         </activity>
-        <activity android:name=".prova.AdicionarQuestao">
+        <activity android:name=".prova.questoes.InserirQuestaoActivity">
         </activity>
         <activity android:name=".prova.ProvaActivity">
         </activity>
         <activity android:name=".chamada.QRCodeGenerator"
                   android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".prova.AdicionarProvaActivity">
+        </activity>
+        <activity android:name=".prova.ExibeProvaActivity">
         </activity>
         <activity android:name=".chamada.QRCodeScan"
                   android:theme="@style/AppTheme.NoActionBar">

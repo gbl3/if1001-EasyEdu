@@ -4,11 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.easyedu.AdapterTurmas
-
+import com.example.easyedu.EasyEduDB
 import com.example.easyedu.R
-import com.example.easyedu.database.RoomDB
-
 import kotlinx.android.synthetic.main.activity_turmas.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -28,12 +25,14 @@ class TurmasActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val db = RoomDB.getDatabase(this)
+        val db = EasyEduDB.getDatabase(this)
         doAsync {
-            val turmas = db.roomDAO().todasTurmas()
+            val turmas = db.turmasDAO().todasTurmas()
+
             uiThread {
                 val recyclerView = listaTurmasRecyclerView
-                recyclerView.adapter = AdapterTurmas(turmas, this@TurmasActivity.applicationContext)
+                recyclerView.adapter =
+                    AdapterTurmas(turmas, this@TurmasActivity.applicationContext)
 
                 val layoutManager = LinearLayoutManager(this@TurmasActivity.applicationContext)
                 recyclerView.layoutManager = layoutManager
