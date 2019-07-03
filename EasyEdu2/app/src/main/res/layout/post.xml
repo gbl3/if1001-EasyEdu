@@ -4,7 +4,9 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:id="@+id/nomePost"
-        android:textSize="30sp"
-        android:background="@drawable/buttongradient"
+        android:textSize="16sp"
+        android:background="@drawable/post_button"
         android:textColor="@color/white"
-        xmlns:android="http://schemas.android.com/apk/res/android"/>
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_gravity="center_horizontal"
+        android:textAllCaps="false"/>
