@@ -32,15 +32,16 @@
             android:textSize="30sp"
             android:id="@+id/nomeTurmaAtual"/>
     <Button
-            android:id="@+id/btn_nova_prova"
+            android:id="@+id/btnVerProvas"
             android:layout_marginTop="5dp"
-            android:layout_width="166dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
-            android:text="Criar prova"
+            android:textAlignment="center"
+            android:text="Ver provas da turma"
             android:textColor="@color/white"
             android:textAllCaps="false"
-            android:textSize="15sp"
+            android:textSize="21sp"
             android:layout_marginBottom="10dp"
     />
 </LinearLayout>

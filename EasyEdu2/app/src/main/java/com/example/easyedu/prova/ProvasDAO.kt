@@ -15,5 +15,5 @@ interface ProvasDAO {
     fun removerProva(vararg prova: Prova)
 
     @Query("SELECT * FROM provas")
-    fun todasQuestoes() : Array<Prova>
+    fun todasProvas() : Array<Prova>
 }

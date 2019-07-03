@@ -16,4 +16,7 @@ interface QuestoesDAO {
 
     @Query("SELECT * FROM questoes")
     fun todasQuestoes() : Array<Questao>
+
+    @Query("SELECT * FROM questoes WHERE idProva LIKE :q")
+    fun buscaQuestaoPeloIdDaProva(q : Int) : Array<Questao>
 }
