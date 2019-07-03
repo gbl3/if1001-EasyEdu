@@ -6,8 +6,11 @@ import android.view.View
 import android.widget.*
 import android.widget.LinearLayout.LayoutParams
 import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.EasyEduDB
 import com.example.easyedu.R
 import kotlinx.android.synthetic.main.activity_adicionar_questao.*
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 
 class InserirQuestaoActivity : AppCompatActivity() {
 
@@ -18,10 +21,25 @@ class InserirQuestaoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_adicionar_questao)
 
         btnAddQuestao.setOnClickListener{
-
             if (btnQuestaoFechada.isChecked) {
                 setAlternativas()
+                TODO("Precisa complementar")
+            } else if (btnQuestaoAberta.isChecked) {
+                var idProva: String = intent.getStringExtra("idProva")
+                val enunciadoQuestao = enunciadoQuestao.text.toString()
+                val questao = Questao(0,
+                    enunciado = enunciadoQuestao,
+                    tipo = 1,
+                    idProva = idProva.toInt()
+                )
 
+                doAsync {
+                    val db = EasyEduDB.getDatabase(applicationContext)
+                    db.questoesDAO().inserirQuestao(questao)
+                    uiThread {
+                        finish()
+                    }
+                }
             }
         }
 

@@ -42,6 +42,8 @@
         </activity>
         <activity android:name=".prova.AdicionarProvaActivity">
         </activity>
+        <activity android:name=".prova.ExibeProvaActivity">
+        </activity>
         <activity android:name=".chamada.QRCodeScan"
                   android:theme="@style/AppTheme.NoActionBar">
         </activity>

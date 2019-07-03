@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+            android:text="Titulo da Prova"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp"/>
+    <TextView
+            android:id="@+id/tituloProvaAtual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textAlignment="center"/>
+    <Button
+            android:id="@+id/btnInserirQuestao"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="Inserir Questao"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="21sp"
+            android:layout_marginBottom="0dp"/>
+    <TextView
+            android:layout_height="wrap_content"
+            android:text="Questões da Prova: "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_width="match_parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listaQuestoesRecyclerView"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+    />
+
+
+</LinearLayout>
+

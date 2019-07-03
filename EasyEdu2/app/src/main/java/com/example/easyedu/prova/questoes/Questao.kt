@@ -8,7 +8,6 @@ data class Questao(
     @PrimaryKey (autoGenerate = true) var id: Int = 0,
     var enunciado: String,
     var tipo: Int,
-    var alternativas: Array<String>?,
     var idProva: Int
 ) {
     override fun toString(): String {
