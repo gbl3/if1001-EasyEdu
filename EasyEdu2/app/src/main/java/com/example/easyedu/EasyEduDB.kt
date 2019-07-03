@@ -4,6 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.easyedu.chamada.Professor
+import com.example.easyedu.chamada.ProfessorDAO
+import com.example.easyedu.chamada.geolocalizacao.Presenca
+import com.example.easyedu.chamada.geolocalizacao.PresencaDAO
 import com.example.easyedu.posts.Post
 import com.example.easyedu.posts.PostsDAO
 import com.example.easyedu.prova.Prova
@@ -12,19 +16,31 @@ import com.example.easyedu.prova.questoes.Questao
 import com.example.easyedu.prova.questoes.QuestoesDAO
 import com.example.easyedu.turmas.Turma
 import com.example.easyedu.turmas.TurmasDAO
+import com.example.easyedu.users.UsuarioAtual
+import com.example.easyedu.users.UsuarioAtualDAO
+import com.example.easyedu.users.UsuarioDAO
 
 @Database(entities = [
     Turma::class,
     Prova::class,
     Questao::class,
-    Post::class
-], version = 2)
+    Post::class,
+    Usuario::class,
+    UsuarioAtual::class,
+    Presenca::class,
+    Professor::class
+], version = 1)
 
 abstract class EasyEduDB : RoomDatabase() {
     abstract fun turmasDAO(): TurmasDAO
     abstract fun provasDao(): ProvasDAO
     abstract fun questoesDAO(): QuestoesDAO
     abstract fun postsDAO(): PostsDAO
+    abstract fun usuarioAtualDAO(): UsuarioAtualDAO
+    abstract fun usuarioDAO(): UsuarioDAO
+    abstract fun professorDAO(): ProfessorDAO
+    abstract fun presencaDAO(): PresencaDAO
+
 
 
     companion object {

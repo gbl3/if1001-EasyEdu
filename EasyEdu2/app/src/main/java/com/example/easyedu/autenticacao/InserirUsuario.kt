@@ -1,11 +1,11 @@
 package com.example.easyedu.autenticacao
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.EasyEduDB
 import com.example.easyedu.R
 import com.example.easyedu.Usuario
-import com.example.easyedu.database.RoomDB
 import kotlinx.android.synthetic.main.activity_cadastro.EmailInput
 import kotlinx.android.synthetic.main.activity_cadastro.SenhaInput
 import kotlinx.android.synthetic.main.activity_cadastro.btnAluno
@@ -34,11 +34,10 @@ class InserirUsuario : AppCompatActivity() {
 
             val usuario = Usuario(email = userEmail, senha = userSenha, perfil = userPerfil)
             doAsync {
-                val db = RoomDB.getDatabase(applicationContext)
-                db.roomDAO().inserirUsuarios(usuario)
+                val db = EasyEduDB.getDatabase(applicationContext)
+                db.usuarioDAO().inserirUsuarios(usuario)
                 uiThread {
                     finish()
-
                 }
 
             }

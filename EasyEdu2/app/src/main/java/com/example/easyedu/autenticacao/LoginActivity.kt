@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.easyedu.*
-import com.example.easyedu.database.RoomDB
+import com.example.easyedu.EasyEduDB
+import com.example.easyedu.R
 import com.example.easyedu.perfil.PerfilActivity
 import com.example.easyedu.users.UsuarioAtual
 import kotlinx.android.synthetic.main.activity_login.*
@@ -22,12 +22,12 @@ class LoginActivity : AppCompatActivity() {
             val emailUser = username.text.toString()
             val senhaUser = password.text.toString()
             doAsync {
-                val db = RoomDB.getDatabase(applicationContext)
-                val usrExist = db.roomDAO().validaLogin(emailUser)
-                val passExist = db.roomDAO().validaSenha(emailUser)
+                val db = EasyEduDB.getDatabase(applicationContext)
+                val usrExist = db.usuarioDAO().validaLogin(emailUser)
+                val passExist = db.usuarioDAO().validaSenha(emailUser)
                 val usrAtual = UsuarioAtual(id = usrExist.id, email = emailUser, perfil = usrExist.perfil)
                 if (usrExist != null && passExist == senhaUser){
-                    db.roomDAO().inserirAtual(usrAtual)
+                    db.usuarioAtualDAO().inserirAtual(usrAtual)
                     uiThread {
                         Toast.makeText(this@LoginActivity, "Login efetuado com sucesso!", Toast.LENGTH_SHORT).show()
                         if (usrAtual.perfil == 2) {

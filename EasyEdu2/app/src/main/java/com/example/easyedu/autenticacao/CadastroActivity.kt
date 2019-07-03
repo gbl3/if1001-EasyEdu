@@ -1,20 +1,18 @@
 package com.example.easyedu.autenticacao
 
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.EasyEduDB
 import com.example.easyedu.R
 import com.example.easyedu.Usuario
-import com.example.easyedu.database.RoomDB
-import kotlinx.android.synthetic.main.activity_cadastro.*
 import kotlinx.android.synthetic.main.activity_cadastro.EmailInput
 import kotlinx.android.synthetic.main.activity_cadastro.SenhaInput
 import kotlinx.android.synthetic.main.activity_cadastro.btnAluno
 import kotlinx.android.synthetic.main.activity_cadastro.btnProfessor
 import kotlinx.android.synthetic.main.activity_cadastro_new.*
 import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 class CadastroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,8 +41,8 @@ class CadastroActivity : AppCompatActivity() {
                 val usuario = Usuario(email = userEmail, senha = userSenha, perfil = userPerfil)
 //            Log.d("pedin", usuario.email)
                 doAsync {
-                    val db = RoomDB.getDatabase(applicationContext)
-                    db.roomDAO().inserirUsuarios(usuario)
+                    val db = EasyEduDB.getDatabase(applicationContext)
+                    db.usuarioDAO().inserirUsuarios(usuario)
 //                    val todos = db.usuariosDAO().todosUsuarios()
 //                    for (um in todos) {
 //                        if (um.email == userEmail) {

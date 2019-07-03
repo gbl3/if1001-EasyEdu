@@ -1,6 +1,5 @@
 package com.example.easyedu.chamada.geolocalizacao
 
-import androidx.appcompat.app.AppCompatActivity
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
@@ -14,14 +13,13 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.EasyEduDB
 import com.example.easyedu.R
-import com.example.easyedu.chamada.QRCodeScan
 import com.example.easyedu.chamada.finalChamada
-import com.example.easyedu.database.RoomDB
 import com.example.easyedu.perfil.PerfilActivity
 import kotlinx.android.synthetic.main.activity_local.*
 import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 
 private const val PERMISSION_REQUEST = 10
@@ -86,9 +84,9 @@ class LocalActivity : AppCompatActivity() {
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 200000, 0F, object : LocationListener {
                     override fun onLocationChanged(location: Location?) {
                         doAsync {
-                            val db = RoomDB.getDatabase(applicationContext)
-                            val idAluno = db.roomDAO().saberPerfilLogado()
-                            val prof = db.roomDAO().todosProf()
+                            val db = EasyEduDB.getDatabase(applicationContext)
+                            val idAluno = db.usuarioAtualDAO().saberPerfilLogado()
+                            val prof = db.professorDAO().todosProf()
                             if (location != null) {
                                 locationGps = location
                                 for (aluno in idAluno) {
@@ -122,7 +120,7 @@ class LocalActivity : AppCompatActivity() {
 
                                             finish()
                                         }else{
-                                            db.roomDAO().inserirPresenca(local)
+                                            db.presencaDAO().inserirPresenca(local)
                                             val intent = Intent(this@LocalActivity, PerfilActivity::class.java)
                                             startActivity(intent)
                                             val intent1 = Intent("android.location.GPS_ENABLED_CHANGE")

@@ -3,12 +3,12 @@ package com.example.easyedu.perfil
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.EasyEduDB
 import com.example.easyedu.R
 import com.example.easyedu.autenticacao.LoginActivity
 import com.example.easyedu.chamada.QRCodeScan
 import com.example.easyedu.chamada.geolocalizacao.LocalActivity
 import com.example.easyedu.chamada.geolocalizacao.Transicao
-import com.example.easyedu.database.RoomDB
 import com.example.easyedu.posts.PostsActivity
 import com.example.easyedu.turmas.TurmasActivity
 import kotlinx.android.synthetic.main.activity_perfil.*
@@ -46,10 +46,10 @@ class PerfilActivity : AppCompatActivity() {
 
         btn_logout.setOnClickListener(){
             doAsync {
-                val db = RoomDB.getDatabase(applicationContext)
-                val tudo = db.roomDAO().saberPerfilLogado()
+                val db = EasyEduDB.getDatabase(applicationContext)
+                val tudo = db.usuarioAtualDAO().saberPerfilLogado()
                 for(atual in tudo) {
-                    db.roomDAO().removerAtual(atual)
+                    db.usuarioAtualDAO().removerAtual(atual)
                 }
                 val intent = Intent(this@PerfilActivity, LoginActivity::class.java)
                 startActivity(intent)

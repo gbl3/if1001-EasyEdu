@@ -1,28 +1,10 @@
-package com.example.easyedu.database
+package com.example.easyedu.users
 
 import androidx.room.*
 import com.example.easyedu.Usuario
-import com.example.easyedu.chamada.Professor
-import com.example.easyedu.chamada.geolocalizacao.Presenca
 
 @Dao
-interface RoomDAO {
-    // PresencaDAO
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun inserirPresenca(vararg presenca: Presenca)
-
-    @Query("SELECT * FROM presenca")
-    fun todasPresencas() : Array<Presenca>
-
-    // ProfessorDAO
-    @Query("SELECT * FROM professor")
-    fun todosProf() : Array<Professor>
-
-    @Update
-    fun atualizarProf(vararg professor: Professor)
-
-
-    //UsuarioDAO
+interface UsuarioDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun inserirUsuarios(vararg usuario: Usuario)
 

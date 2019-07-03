@@ -9,19 +9,17 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.media.MediaScannerConnection
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Environment
 import android.os.Bundle
+import android.os.Environment
 import android.provider.Settings
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.easyedu.EasyEduDB
 import com.example.easyedu.R
-import com.example.easyedu.chamada.geolocalizacao.Presenca
-import com.example.easyedu.database.RoomDB
-import com.example.easyedu.perfil.PerfilActivity
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.WriterException
@@ -31,7 +29,7 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import java.util.Calendar
+import java.util.*
 
 private const val PERMISSION_REQUEST = 10
 class QRCodeGenerator : AppCompatActivity() {
@@ -170,8 +168,8 @@ class QRCodeGenerator : AppCompatActivity() {
                     override fun onLocationChanged(location: Location?) {
 
                         doAsync {
-                            val db = RoomDB.getDatabase(applicationContext)
-                            val idProf = db.roomDAO().saberPerfilLogado()
+                            val db = EasyEduDB.getDatabase(applicationContext)
+                            val idProf = db.usuarioAtualDAO().saberPerfilLogado()
                             if (location != null) {
                                 locationGps = location
                                 for (professor in idProf) {
@@ -182,19 +180,19 @@ class QRCodeGenerator : AppCompatActivity() {
                                     )
  //                                   Log.d("CodeAndroidLocation", " GPS Latitude : " + locationGps!!.latitude)
 //                            Log.d("CodeAndroidLocation", " GPS Longitude : " + locationGps!!.longitude)
-                                    val isso = db.roomDAO().todosProf()
+                                    val isso = db.professorDAO().todosProf()
 
                                     if(isso.size >= 1){
-                                        db.roomDAO().atualizarProf(local)
+                                        db.professorDAO().atualizarProf(local)
                                         Log.d("pedin", isso.size.toString())
                                     }else {
-                                        db.roomDAO().inserirProfessor(local)
+                                        db.professorDAO().inserirProfessor(local)
                                     }
                                 }
 
                                 doAsync {
-                                    val a = RoomDB.getDatabase(applicationContext)
-                                    val isso = a.roomDAO().todosProf()
+                                    val a = EasyEduDB.getDatabase(applicationContext)
+                                    val isso = a.professorDAO().todosProf()
 
                                     for (x in isso){
                                         Log.d("pedin", " GPS Longitude : " + x.longitude)
