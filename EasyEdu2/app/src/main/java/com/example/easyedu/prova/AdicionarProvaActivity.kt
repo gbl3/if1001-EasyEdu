@@ -18,14 +18,15 @@ class AdicionarProvaActivity : AppCompatActivity() {
 
 
         btnInserirQuestao.setOnClickListener {
-            val intent = Intent(this, InserirQuestaoActivity::class.java)
-            startActivity(intent)
+            val newIntent = Intent(this, InserirQuestaoActivity::class.java)
+//            newIntent.putExtra("turmaId", intent.getStringExtra("turmaId"))
+            startActivity(newIntent)
         }
 
         btnCriarProva.setOnClickListener {
             var idTurma: String = intent.getStringExtra("idTurma")
             val tituloProva = txtTituloProva.text.toString()
-            val prova = Prova(0, titulo = tituloProva, questaoId = 0)
+            val prova = Prova(0, titulo = tituloProva, turmaId = idTurma.toInt())
             doAsync {
                 val db = EasyEduDB.getDatabase(applicationContext)
                 db.provasDao().inserirProva(prova)

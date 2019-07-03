@@ -32,7 +32,6 @@
             android:textSize="30sp"
             android:id="@+id/nomeTurmaAtual"/>
     <Button
-
             android:id="@+id/btn_nova_prova"
             android:layout_marginTop="5dp"
             android:layout_width="166dp"

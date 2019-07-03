@@ -14,9 +14,9 @@ class AdicionarTurmaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.adicionar_turma)
         btnInserirTurma.setOnClickListener {
-            val turmaId = txtId.text.toString()
             val turmaNome = txtNome.text.toString()
-            val turma = Turma(0, nome = turmaNome, provaId = 0)
+            val turma = Turma(0, nome = turmaNome)
+
             doAsync {
                 val db = EasyEduDB.getDatabase(applicationContext)
                 db.turmasDAO().inserirTurmas(turma)

@@ -15,7 +15,7 @@ import com.example.easyedu.turmas.TurmasDAO
     Turma::class,
     Prova::class,
     Questao::class
-], version = 1)
+], version = 2)
 
 abstract class EasyEduDB : RoomDatabase() {
     abstract fun turmasDAO(): TurmasDAO

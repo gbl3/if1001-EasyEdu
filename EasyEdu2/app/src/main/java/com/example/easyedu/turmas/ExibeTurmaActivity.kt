@@ -20,9 +20,9 @@ class ExibeTurmaActivity : AppCompatActivity() {
         nomeTurmaAtual.text = nomeTurma
 
         btn_nova_prova.setOnClickListener() {
-            val intent = Intent(this, AdicionarProvaActivity::class.java)
-            intent.putExtra("idTurma", idTurma)
-            startActivity(intent)
+            val newIntent = Intent(this, AdicionarProvaActivity::class.java)
+            newIntent.putExtra("turmaId", idTurma)
+            startActivity(newIntent)
         }
     }
 }

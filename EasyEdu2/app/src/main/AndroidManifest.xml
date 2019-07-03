@@ -35,6 +35,8 @@
         </activity>
         <activity android:name=".prova.ProvaActivity">
         </activity>
+        <activity android:name=".prova.AdicionarProvaActivity">
+        </activity>
         <activity android:name=".chamada.QRCodeGenerator">
         </activity>
         <activity android:name=".chamada.QRCodeScan">
