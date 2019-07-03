@@ -1,5 +1,6 @@
 package com.example.easyedu.posts
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.easyedu.R
@@ -14,6 +15,8 @@ class AdicionarPostActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.adicionar_post)
         btnInserirPost.setOnClickListener {
+            val intent = Intent(this, PostsActivity::class.java)
+            startActivity(intent)
             val postId = txtId.text.toString()
             val postMsg = txtMsg.text.toString()
             val post = Post(postId, postMsg)

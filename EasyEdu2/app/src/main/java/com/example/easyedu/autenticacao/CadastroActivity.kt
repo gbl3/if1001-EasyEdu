@@ -40,7 +40,7 @@ class CadastroActivity : AppCompatActivity() {
             }
 
             if (userConf == userSenha && userPerfil != 0) {
-                val usuario = Usuario(email = userEmail, senha = userSenha, perfil = userPerfil)
+                val usuario = Usuario(email = userEmail, senha = userSenha, perfil = userPerfil, turma = 0)
 //            Log.d("pedin", usuario.email)
                 doAsync {
                     val db = RoomDB.getDatabase(applicationContext)

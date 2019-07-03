@@ -14,6 +14,8 @@
             android:roundIcon="@mipmap/pcbook"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".turmas.EntrarTurma">
+        </activity>
         <activity android:name=".chamada.finalChamada">
         </activity>
         <activity android:name=".chamada.geolocalizacao.LocalActivity">
@@ -37,22 +39,26 @@
         </activity>
         <activity android:name=".prova.ProvaActivity">
         </activity>
-        <activity android:name=".chamada.QRCodeGenerator"
-                  android:theme="@style/AppTheme.NoActionBar">
+        <activity
+                android:name=".chamada.QRCodeGenerator"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".prova.AdicionarProvaActivity">
         </activity>
         <activity android:name=".prova.ExibeProvaActivity">
         </activity>
-        <activity android:name=".chamada.QRCodeScan"
-                  android:theme="@style/AppTheme.NoActionBar">
+        <activity
+                android:name=".chamada.QRCodeScan"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".chamada.geolocalizacao.MostrarPresencas"/>
-        <activity android:name=".turmas.AdicionarTurmaActivity"
-                  android:theme="@style/AppTheme.NoActionBar">
+        <activity
+                android:name=".turmas.AdicionarTurmaActivity"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".posts.AdicionarPostActivity"
-                  android:theme="@style/AppTheme.NoActionBar">
+        <activity
+                android:name=".posts.AdicionarPostActivity"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
                 android:name=".posts.PostsActivity"

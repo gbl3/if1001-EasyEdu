@@ -12,7 +12,10 @@ import com.example.easyedu.chamada.geolocalizacao.LocalActivity
 import com.example.easyedu.chamada.geolocalizacao.MostrarPresencas
 import com.example.easyedu.chamada.geolocalizacao.Transicao
 import com.example.easyedu.database.RoomDB
+import com.example.easyedu.posts.AdicionarPostActivity
 import com.example.easyedu.posts.PostsActivity
+import com.example.easyedu.turmas.AdapterTurmas
+import com.example.easyedu.turmas.ExibeTurmaActivity
 import com.example.easyedu.turmas.TurmasActivity
 import kotlinx.android.synthetic.main.activity_perfil.*
 import org.jetbrains.anko.doAsync
@@ -54,7 +57,7 @@ class PerfilActivity : AppCompatActivity() {
         }
         btn_posts.setOnClickListener() {
 
-            val intent = Intent(this, PostsActivity::class.java)//<<<<<<< HEAD
+            val intent = Intent(this, AdicionarPostActivity::class.java)//<<<<<<< HEAD
 //            val intent = Intent(this, UserProfileActivity::class.java)
 //=======
 //            val intent = Intent(this,UserProfileActivity::class.java)

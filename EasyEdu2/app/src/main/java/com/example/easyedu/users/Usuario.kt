@@ -8,7 +8,8 @@ data class Usuario(
     @PrimaryKey (autoGenerate = true) var id: Int = 0,
     var email: String,
     var senha: String,
-    var perfil: Int
+    var perfil: Int,
+    var turma: Int
     ) {
     override fun toString(): String {
         return email
