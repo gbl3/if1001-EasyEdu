@@ -27,7 +27,8 @@ class ProvaActivity : AppCompatActivity() {
         super.onResume()
         val db = EasyEduDB.getDatabase(this)
         doAsync {
-            val provas = db.provasDao().todasProvas()
+            val idTurma = intent.getStringExtra("idTurma")
+            val provas = db.provasDao().buscaProvaPeloIdDaTurma(idTurma.toInt())
             uiThread {
                 val recyclerView = listaProvasRecyclerView
                 recyclerView.adapter = AdapterProvas(provas, this@ProvaActivity.applicationContext)

@@ -7,8 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/login_background"
-        >
+        android:background="@drawable/login_background">
 
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -23,7 +22,7 @@
     />
 
     <Button
-        android:text="Ver Presenças"
+        android:text="Alguma coisa"
         android:id="@+id/geo"
         android:layout_marginTop="30dp"
         android:layout_width="166dp"
@@ -80,7 +79,7 @@
             android:layout_width="166dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
-            android:text="Criar Turmas"
+            android:text="Visualizar Turmas"
             android:textColor="@color/white"
             android:textAllCaps="false"
             android:textSize="15sp"

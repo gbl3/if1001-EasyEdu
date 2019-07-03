@@ -16,4 +16,7 @@ interface ProvasDAO {
 
     @Query("SELECT * FROM provas")
     fun todasProvas() : Array<Prova>
+
+    @Query("SELECT * FROM provas WHERE turmaId LIKE :q")
+    fun buscaProvaPeloIdDaTurma(q : Int) : Array<Prova>
 }

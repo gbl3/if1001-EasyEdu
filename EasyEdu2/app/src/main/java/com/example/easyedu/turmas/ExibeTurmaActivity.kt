@@ -26,9 +26,9 @@ class ExibeTurmaActivity : AppCompatActivity() {
         }
 
         btnVerPosts.setOnClickListener() {
-            val newIntent = Intent(this, PostsActivity::class.java)
-            newIntent.putExtra("idTurma", idTurma)
-            startActivity(newIntent)
+            val intentPosts = Intent(this, PostsActivity::class.java)
+            intentPosts.putExtra("idTurma", idTurma)
+            startActivity(intentPosts)
         }
     }
 }

@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.example.easyedu.R
 import kotlinx.android.synthetic.main.post.view.*
-import kotlinx.android.synthetic.main.prova_item.view.*
 
 class AdapterPosts(private val listaDePosts: Array<Post>,
                    private val context: Context) : Adapter<AdapterPosts.ViewHolder>() {
@@ -23,7 +22,6 @@ class AdapterPosts(private val listaDePosts: Array<Post>,
 
         holder.msgPost.setOnClickListener{
             val newIntent = Intent(context, ExibePostActivity::class.java)
-            newIntent.putExtra("idPost", post.id.toString())
             newIntent.putExtra("msgPost", post.msg)
             context.startActivity(newIntent)
         }

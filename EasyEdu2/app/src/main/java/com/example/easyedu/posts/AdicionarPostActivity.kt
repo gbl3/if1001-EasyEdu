@@ -15,9 +15,8 @@ class AdicionarPostActivity : AppCompatActivity() {
         setContentView(R.layout.adicionar_post)
         btnInserirPost.setOnClickListener {
             var idTurma: String = intent.getStringExtra("idTurma")
-            val postId = txtId.text.toString()
             val postMsg = txtMsg.text.toString()
-            val post = Post(postId, postMsg, idTurma.toInt())
+            val post = Post(0, msg = postMsg, turmaId = idTurma.toInt())
             doAsync {
                 val db = EasyEduDB.getDatabase(applicationContext)
                 db.postsDAO().inserirPosts(post)

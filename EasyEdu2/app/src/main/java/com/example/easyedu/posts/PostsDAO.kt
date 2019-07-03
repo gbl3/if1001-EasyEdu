@@ -22,4 +22,7 @@ interface PostsDAO {
 
     @Query("SELECT * FROM posts WHERE id LIKE :q")
     fun buscaPostPeloId(q : String) : List<Post>
+
+    @Query("SELECT * FROM posts WHERE turmaId LIKE :q")
+    fun buscaPostPeloIdDaTurma(q : Int) : Array<Post>
 }
