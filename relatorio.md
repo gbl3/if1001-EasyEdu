@@ -62,5 +62,35 @@ Uma aplicação voltada para educação com o objetivo de facilitar algumas ativ
 
 ## Estrutura da aplicação 
 
+- Tela inicial
+- Cadastro
+- Login
+
+*Para Alunos:*
+
+- Ver turmas
+  - Entrar em uma turma
+  - Ver provas da turma
+    - Ver questões da prova
+  - Ver posts da turma
+    - Fazer um novo post
+      - Ver um post
+  - Responder chamada
+- Fazer logout
+
+*Para Professores:*
+
+- Criar turmas
+  - Adicionar turma
+    - Ver Prova
+      - Criar Prova
+        - Inserir Questão 
+  - Ver posts da turma
+    - Fazer um novo Post
+      - Ver um post
+  - Fazer chamada
+    - Gerar QrCode
+- Fazer Logout
+
 # Descrição da Implementação
 
