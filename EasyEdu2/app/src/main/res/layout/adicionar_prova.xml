@@ -45,6 +45,11 @@
                 android:background="@drawable/login_edit_background"
                 android:padding="10dp"
         />
+        <LinearLayout
+                android:id="@+id/content_prova"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent"/>
 
         <Button
                 android:id="@+id/btnInserirQuestao"
