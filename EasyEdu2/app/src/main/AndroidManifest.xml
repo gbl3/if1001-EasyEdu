@@ -14,6 +14,8 @@
             android:roundIcon="@mipmap/pcbook"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".chamada.finalChamada">
+        </activity>
         <activity android:name=".chamada.geolocalizacao.LocalActivity">
         </activity>
         <activity android:name=".ExibeTurmaActivity">
@@ -62,6 +64,7 @@
         <activity
                 android:name=".autenticacao.LoginActivity"
                 android:theme="@style/LoginTheme"/>
+        <activity android:name=".chamada.geolocalizacao.Transicao"/>
     </application>
 
 </manifest>

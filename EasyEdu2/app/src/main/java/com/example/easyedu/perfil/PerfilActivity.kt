@@ -8,6 +8,7 @@ import com.example.easyedu.autenticacao.LoginActivity
 import com.example.easyedu.chamada.QRCodeGenerator
 import com.example.easyedu.chamada.QRCodeScan
 import com.example.easyedu.chamada.geolocalizacao.LocalActivity
+import com.example.easyedu.chamada.geolocalizacao.Transicao
 import com.example.easyedu.database.RoomDB
 import com.example.easyedu.posts.PostsActivity
 import com.example.easyedu.turmas.TurmasActivity
@@ -32,7 +33,7 @@ class PerfilActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btn_create_qr.setOnClickListener() {
-            val intent = Intent(this, QRCodeGenerator::class.java)
+            val intent = Intent(this, Transicao::class.java)
 
             startActivity(intent)
         }

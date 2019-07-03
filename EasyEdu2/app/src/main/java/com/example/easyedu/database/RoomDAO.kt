@@ -2,6 +2,8 @@ package com.example.easyedu.database
 
 import androidx.room.*
 import com.example.easyedu.Usuario
+import com.example.easyedu.chamada.Professor
+import com.example.easyedu.chamada.geolocalizacao.Presenca
 import com.example.easyedu.posts.Post
 import com.example.easyedu.prova.Questao
 import com.example.easyedu.turmas.Turma
@@ -11,6 +13,12 @@ import com.example.easyedu.users.UsuarioAtual
 interface RoomDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun inserirPosts(vararg post: Post)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun inserirPresenca(vararg presenca: Presenca)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun inserirProfessor(vararg professor: Professor)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun inserirQuestao(vararg questao: Questao)
@@ -24,6 +32,9 @@ interface RoomDAO {
     @Query("SELECT * FROM posts")
     fun todosPosts() : Array<Post>
 
+    @Query("SELECT * FROM professor")
+    fun todosProf() : Array<Professor>
+
     @Query("SELECT * FROM posts WHERE msg LIKE :q")
     fun buscaPostPelaMsg(q : String) : List<Post>
 
@@ -35,6 +46,9 @@ interface RoomDAO {
 
     @Update
     fun atualizarTurmas(vararg turma: Turma)
+
+    @Update
+    fun atualizarProf(vararg professor: Professor)
 
     @Delete
     fun removerTurmas(vararg turma: Turma)
@@ -71,6 +85,9 @@ interface RoomDAO {
 
     @Query("SELECT * FROM usuarios")
     fun todosUsuarios() : Array<Usuario>
+
+    @Query("SELECT * FROM presenca")
+    fun todasPresencas() : Array<Presenca>
 
     @Query("SELECT COUNT(*) FROM usuarios")
     fun todoscOUNT() : Int

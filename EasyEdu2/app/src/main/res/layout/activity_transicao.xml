@@ -8,14 +8,14 @@
               tools:context=".chamada.geolocalizacao.LocalActivity">
 
     <Button
-            android:id="@+id/btn_get_location"
+            android:id="@+id/btn_get_locations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Confirmar Localização" />
 
     <TextView
-            android:id="@+id/tv_result"
+            android:id="@+id/tv_results"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"/>
