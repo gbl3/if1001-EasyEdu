@@ -37,13 +37,17 @@
         </activity>
         <activity android:name=".prova.ProvaActivity">
         </activity>
-        <activity android:name=".chamada.QRCodeGenerator">
+        <activity android:name=".chamada.QRCodeGenerator"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".chamada.QRCodeScan">
+        <activity android:name=".chamada.QRCodeScan"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".turmas.AdicionarTurmaActivity">
+        <activity android:name=".turmas.AdicionarTurmaActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".posts.AdicionarPostActivity">
+        <activity android:name=".posts.AdicionarPostActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
                 android:name=".posts.PostsActivity"
