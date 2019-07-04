@@ -12,6 +12,7 @@
             android:textAlignment="center"
             android:text="Enunciado da Questão"
             android:background="@drawable/login_background"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"/>
 </LinearLayout>
 

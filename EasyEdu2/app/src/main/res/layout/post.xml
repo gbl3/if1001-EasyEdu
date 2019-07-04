@@ -12,5 +12,6 @@
         android:textAlignment="center"
         android:text="Nome do post"
         android:textColor="@color/white"
-        android:background="@drawable/post_button"/>
+        android:background="@drawable/post_button"
+        android:layout_marginBottom="10sp"/>
 </LinearLayout>

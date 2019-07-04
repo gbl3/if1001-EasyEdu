@@ -6,7 +6,6 @@
               android:gravity="center"
 >
 
-
     <ListView
             android:id="@+id/listaPresenca"
             android:layout_width="match_parent"
