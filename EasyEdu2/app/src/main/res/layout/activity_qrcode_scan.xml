@@ -19,7 +19,6 @@
               android:text="RECOMENDAÇÃO:"
     />
 
-
     <TextView android:layout_width="310dp"
               android:layout_height="wrap_content"
               android:textSize="20dp"
