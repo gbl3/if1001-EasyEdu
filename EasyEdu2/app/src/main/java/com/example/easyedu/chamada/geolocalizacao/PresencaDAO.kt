@@ -12,4 +12,7 @@ interface PresencaDAO {
 
     @Query("SELECT * FROM presenca")
     fun todasPresencas() : Array<Presenca>
+
+    @Query("SELECT * FROM presenca GROUP BY idAluno")
+    fun todasPresencasview() : Array<Presenca>
 }
