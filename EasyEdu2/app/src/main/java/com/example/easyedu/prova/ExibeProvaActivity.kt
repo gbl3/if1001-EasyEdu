@@ -18,6 +18,14 @@ class ExibeProvaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exibe_prova)
 
+        val db = EasyEduDB.getDatabase(this)
+        doAsync {
+            val usuarioLogado = db.usuarioAtualDAO().saberPerfilLogado()[0]
+            if(usuarioLogado.perfil == 1) {
+                layoutExibeProva.removeView(findViewById(R.id.btnInserirQuestao))
+            }
+        }
+
         var tituloProva: String = intent.getStringExtra("tituloProva")
         tituloProvaAtual.text = tituloProva
 

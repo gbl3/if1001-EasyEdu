@@ -20,5 +20,5 @@ interface TurmasDAO {
     fun buscaTurmaPeloNome(q : String) : List<Turma>
 
     @Query("SELECT * FROM turmas WHERE id LIKE :q")
-    fun buscaTurmaPeloId(q : String) : List<Turma>
+    fun buscaTurmaPeloId(q : Int) : List<Turma>
 }

@@ -13,9 +13,17 @@ import org.jetbrains.anko.uiThread
 class TurmasActivity : AppCompatActivity() {
 
     var turmas: Array<Turma>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_turmas)
+        val db = EasyEduDB.getDatabase(this)
+        doAsync {
+            val usuarioLogado = db.usuarioAtualDAO().saberPerfilLogado()[0]
+            if(usuarioLogado.perfil == 1) {
+                layoutTurmas.removeView(findViewById(R.id.btnAddTurma))
+            }
+        }
 
         btnAddTurma.setOnClickListener {
             val intent = Intent(this, AdicionarTurmaActivity::class.java)
@@ -30,8 +38,7 @@ class TurmasActivity : AppCompatActivity() {
             val turmas = db.turmasDAO().todasTurmas()
             uiThread {
                 val recyclerView = listaTurmasRecyclerView
-                recyclerView.adapter =
-                    AdapterTurmas(turmas, this@TurmasActivity.applicationContext)
+                recyclerView.adapter = AdapterTurmas(turmas, this@TurmasActivity.applicationContext)
 
                 val layoutManager = LinearLayoutManager(this@TurmasActivity.applicationContext)
                 recyclerView.layoutManager = layoutManager

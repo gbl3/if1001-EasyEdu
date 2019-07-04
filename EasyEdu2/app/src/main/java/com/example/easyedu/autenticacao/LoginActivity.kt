@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
                 val db = EasyEduDB.getDatabase(applicationContext)
                 val usrExist = db.usuarioDAO().validaLogin(emailUser)
                 val passExist = db.usuarioDAO().validaSenha(emailUser)
-                val usrAtual = UsuarioAtual(id = usrExist.id, email = emailUser, perfil = usrExist.perfil)
+                val usrAtual = UsuarioAtual(id = usrExist.id, email = emailUser, perfil = usrExist.perfil, userId = usrExist.id)
                 if (usrExist != null && passExist == senhaUser){
                     db.usuarioAtualDAO().inserirAtual(usrAtual)
                     uiThread {
@@ -40,15 +40,11 @@ class LoginActivity : AppCompatActivity() {
                     }
                     finish()
                         }
-
                         else {
                     uiThread {
                         Toast.makeText(this@LoginActivity, "Login ou Senha Inválido!", Toast.LENGTH_SHORT).show()
                     }
                 }
-
-
-
             }
 
         }

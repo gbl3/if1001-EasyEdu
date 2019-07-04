@@ -19,6 +19,7 @@ import com.example.easyedu.turmas.TurmasDAO
 import com.example.easyedu.users.UsuarioAtual
 import com.example.easyedu.users.UsuarioAtualDAO
 import com.example.easyedu.users.UsuarioDAO
+import com.example.easyedu.users.UsuarioPertenceTurmaDAO
 
 @Database(entities = [
     Turma::class,
@@ -28,7 +29,8 @@ import com.example.easyedu.users.UsuarioDAO
     Usuario::class,
     UsuarioAtual::class,
     Presenca::class,
-    Professor::class
+    Professor::class,
+    UsuarioPertenceTurma::class
 ], version = 1)
 
 abstract class EasyEduDB : RoomDatabase() {
@@ -37,6 +39,7 @@ abstract class EasyEduDB : RoomDatabase() {
     abstract fun questoesDAO(): QuestoesDAO
     abstract fun postsDAO(): PostsDAO
     abstract fun usuarioAtualDAO(): UsuarioAtualDAO
+    abstract fun usuarioPertenceTurmaDAO(): UsuarioPertenceTurmaDAO
     abstract fun usuarioDAO(): UsuarioDAO
     abstract fun professorDAO(): ProfessorDAO
     abstract fun presencaDAO(): PresencaDAO

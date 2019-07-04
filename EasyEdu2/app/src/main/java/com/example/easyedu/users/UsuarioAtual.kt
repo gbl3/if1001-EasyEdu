@@ -7,7 +7,8 @@ import androidx.room.PrimaryKey
 data class UsuarioAtual(
     @PrimaryKey var id: Int,
     var email: String,
-    var perfil: Int
+    var perfil: Int,
+    var userId: Int
 
 ) {
     override fun toString(): String {

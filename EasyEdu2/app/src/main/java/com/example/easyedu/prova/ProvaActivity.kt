@@ -16,6 +16,14 @@ class ProvaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prova)
 
+        val db = EasyEduDB.getDatabase(this)
+        doAsync {
+            val usuarioLogado = db.usuarioAtualDAO().saberPerfilLogado()[0]
+            if(usuarioLogado.perfil == 1) {
+                layoutProva.removeView(findViewById(R.id.btnCriarProva))
+            }
+        }
+
         btnCriarProva.setOnClickListener {
             val newIntent = Intent(this, AdicionarProvaActivity::class.java)
             newIntent.putExtra("idTurma", intent.getStringExtra("idTurma"))
